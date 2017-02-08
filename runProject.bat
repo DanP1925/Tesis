@@ -1,3 +1,2 @@
 @echo off
-python ./source/extractOpinions.py
-pause
+python "D:\Ciclo 6\Tesis 2\Tesis\source\extractOpinions.py" > "D:\Ciclo 6\Tesis 2\Tesis\projectOutput.txt"

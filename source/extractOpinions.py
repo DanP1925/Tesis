@@ -10,12 +10,16 @@ def extractEntity(tweet):
 
 def main():
 	doc = "D:\Ciclo 6\Tesis 2\stompol-tweets-train-tagged.xml"
+	#doc = r"D:\Ciclo 6\Tesis 2\Tesis\source\test\xmltestfile.xml"
 	tree = ET.parse(doc)
 	tweets = tree.getroot()
+	entities = dict()
+	
 	i=1
 	for tweet in tweets:
-		entities = extractEntity(tweet)
-		print(entities)
+		tweetEntities = extractEntity(tweet)
+		
+	print(entities)
 	
 	
 if __name__ == "__main__":
