@@ -21,4 +21,5 @@ class XmlParser:
 		return result
 		
 	def extractAspects(self,tweet):
+		result = []
 		return tweet
