@@ -17,8 +17,9 @@ def main():
 			tweetAspects = xmlparser.extractAspects(tweet,tweetEntity)
 			entity = corpus.getEntity(tweetEntity)
 			entity.addNewAspects(tweetAspects)
-			
-		i=i+1
+			entity.addNewOpinion(tweet)
+			i=i+1
+	corpus.debug()
 	
 if __name__ == "__main__":
 	main()

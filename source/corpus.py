@@ -27,3 +27,8 @@ class Corpus:
 			if entity.name == value:
 				return entity
 		return None
+		
+	def debug(self):
+		for entity in self.entities:
+			entity.debug()
+			print()
