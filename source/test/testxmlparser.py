@@ -19,3 +19,24 @@ class extractEntityMethod(unittest.TestCase):
 	
 	def testEntityExtractionMultipleOnOneEntity(self):
 		self.assertEqual(self.xmlparser.extractEntity(self.tweets[2]),['Partido_Popular','Podemos','Partido_Socialista_Obrero_Espanol','Izquierda_Unida','Ciudadanos'])
+
+class extractAspectMethod(unittest.TestCase):
+
+	doc = r"D:\Ciclo 6\Tesis 2\Tesis\source\test\xmltestfile.xml"
+
+	xmlparser = XML.XmlParser(doc)
+	tweets = xmlparser.root
+		
+	def testAspectExtractionSingle(self):
+		self.assertEqual(self.xmlparser.extractAspects(self.tweets[0],'Partido_Popular'),['Economia'])
+		
+	def testAspectExtractionMultiple(self):
+		self.assertEqual(self.xmlparser.extractAspects(self.tweets[1],'Partido_Socialista_Obrero_Espanol'),['Economia'])
+		self.assertEqual(self.xmlparser.extractAspects(self.tweets[1],'Partido_Popular'),['Economia'])
+		
+	def testAspectExtractionMultipleOnOneEntity(self):
+		self.assertEqual(self.xmlparser.extractAspects(self.tweets[2],'Partido_Popular'),['Economia'])
+		self.assertEqual(self.xmlparser.extractAspects(self.tweets[2],'Podemos'),['Economia'])
+		self.assertEqual(self.xmlparser.extractAspects(self.tweets[2],'Partido_Socialista_Obrero_Espanol'),['Economia'])
+		self.assertEqual(self.xmlparser.extractAspects(self.tweets[2],'Izquierda_Unida'),['Economia'])
+		self.assertEqual(self.xmlparser.extractAspects(self.tweets[2],'Ciudadanos'),['Economia'])

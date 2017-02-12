@@ -12,8 +12,12 @@ def main():
 	i=1
 	for tweet in tweets:
 		tweetEntities = xmlparser.extractEntity(tweet)
-		entities.addNewEntities(tweetEntities)
-		
+		corpus.addNewEntities(tweetEntities)
+		for tweetEntity in tweetEntities:
+			tweetAspects = xmlparser.extractAspects(tweet,tweetEntity)
+			entity = corpus.getEntity(tweetEntity)
+			entity.addNewAspects(tweetAspects)
+			
 		i=i+1
 	
 if __name__ == "__main__":

@@ -11,15 +11,18 @@ class addNewEntitiesMethod(unittest.TestCase):
 
 	xmlparser = XML.XmlParser(doc)
 	tweets = xmlparser.root
+	
+	def setUp(self):
+		self.corpus = COR.Corpus()
 
 	def testAddNewEntitiesSingle(self):
 		tweetEntities = self.xmlparser.extractEntity(self.tweets[0])
-		self.entities.addNewEntities(tweetEntities)
-		self.assertEqual(self.entities.entities,{'Partido_Popular':[[],[]]})
-		self.entities.entities.clear()
+		self.corpus.addNewEntities(tweetEntities)
+		self.assertEqual(self.corpus.asEntityList(),['Partido_Popular'])
+		del self.corpus.entities[:]
 		
 	def testAddNewEntitiesMultiple(self):
 		tweetEntities = self.xmlparser.extractEntity(self.tweets[1])
-		self.entities.addNewEntities(tweetEntities)
-		self.assertEqual(self.entities.entities,{'Partido_Popular':[[],[]], 'Partido_Socialista_Obrero_Espanol':[[],[]]})
-		self.entities.entities.clear()
+		self.corpus.addNewEntities(tweetEntities)
+		self.assertEqual(self.corpus.asEntityList(),['Partido_Socialista_Obrero_Espanol', 'Partido_Popular'])
+		del self.corpus.entities[:]
