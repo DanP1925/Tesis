@@ -37,3 +37,15 @@ class XmlParser:
 					if aspect not in result:
 							result.append(aspect)
 		return result
+	
+	def reestructure(self,tweet):
+		if tweet.text is not None:
+			full = tweet.text
+		else:
+			full = ""
+		for sentiment in tweet:
+			if sentiment.text is not None:
+				full+=sentiment.text
+			if sentiment.tail is not None:
+				full +=sentiment.tail
+		return full

@@ -10,67 +10,48 @@ Aspect:
 Otros_aspectos
 Aspect: 
 Sanidad
-
-Entity: 
-Name: Partido_Socialista_Obrero_Espanol
-Aspect: 
-Propio_partido
-Aspect: 
-Economia
-Aspect: 
-Otros_aspectos
-Aspect: 
-Sanidad
-
-Entity: 
-Name: Ciudadanos
-Aspect: 
-Propio_partido
-Aspect: 
-Economia
-Aspect: 
-Otros_aspectos
-Aspect: 
-Sanidad
-Aspect: 
-Educacion
-
-Entity: 
-Name: Izquierda_Unida
-Aspect: 
-Propio_partido
-Aspect: 
-Educacion
-Aspect: 
-Otros_aspectos
-Aspect: 
-Economia
-Aspect: 
-Sanidad
-
-Entity: 
-Name: Podemos
-Aspect: 
-Propio_partido
-Aspect: 
-Economia
-Aspect: 
-Sanidad
-Aspect: 
-Educacion
-Aspect: 
-Otros_aspectos
-
-Entity: 
-Name: Union_Progreso_y_Democracia
-Aspect: 
-Propio_partido
-Aspect: 
-Otros_aspectos
-Aspect: 
-Sanidad
-Aspect: 
-Educacion
-Aspect: 
-Economia
-
+Opinion
+Diga cuanto nos van a costar las autovías de sus amiguetes ¿4500 millones o más ?  @EsperanzAguirre @PPopular
+Opinion
+Partido podrido, partido prostituido = @PPopular  https://t.co/C9YbvGD4zh
+Opinion
+@PPopular pero que poca vergüenza teneis degenerados
+Opinion
+José Ignacio Wert Ministro de Educación Cultura y Deportes del Gobierno de España, Nuria Riera Con... https://t.co/Hv1Vp0bQao via @change_es
+Opinion
+.@AytoAntequera ha pasado en 4 años de recibir avisos de corte d luz por impagos con @psoe a renovar luminarias eficientes con @PPAntequera
+Opinion
+IU denuncia la apuesta del PP por profundizar la privatización en la Educación Superior | IZQUIERDA UNIDA http://t.co/PVvccGoVmz via @iunida
+Opinion
+Me firma el libro @marianorajoy ?? #FelizDiaDelLibro son unos recibís que le quedaron pendientes http://t.co/x4X6GtoOYu
+Opinion
+@MGFolch @PPopular Así debe se ser además lo hacen con unas llamadas de teléfono y una buena comilona o cena que pagamos los españoles
+Opinion
+@nieveslazurda @ccifuentes @PPopular Las privatizaciones crean paro y miseria mientras políticos corruptos y sus amigos se llenan el bolsillo
+Opinion
+@Roberhawk @PPopular En Nueva yor? Quiénes,los mismos que acusan a @NicolasMaduro de asesino @Pablo_Iglesias_ ?
+Opinion
+@PPopular @Qvixote2015 O podemos leer el BOE donde habéis metido el programa de religión en los colegios. Eso si queremos tragicomedia.
+Opinion
+Diez huelgas de Educación en Aragón desde que Wert es ministro http://t.co/bFTAhJz1Ru vía @eldiarioaragon
+Opinion
+Pues habrá que cepillarse a #Trillo y a #Pujalte no compañeros?  @PPopular
+Opinion
+@PPopular pero la población activa bajó en 127.400 personas y por tanto la tasa de paro SUBE hasta el 23,78%. Dejad de vender humo.
+Opinion
+De esos 13000 menos de paro, cuantos indefinidos, cuantos de 8 horas al día? #paro ladrones mentirosos @PPopular
+Opinion
+@AlexStraits @jabiloto @es_INE @marianorajoy ha ha jajaja jajajajaja pero en que país vives? Vives en una burbuja y solo lees ACB, no?
+Opinion
+@PPopular... Lo dicho: el PP es el partido del funéreo. Porque para escribir estas cosas...
+Opinion
+@PSOE @sanchezcastejon  El PP es un PARTIDO CORRUPTO en DESCOMPOSICION Solo faltan PENAS EJEMPLARES y q hablen BARCENAS, RATO, BLESA, MATAS
+Opinion
+@marianorajoy presidente de nuevo ya, otra noche como aquella <3
+Opinion
+Del error de @sanchezcastejon se ha hablado en los medios... ¿q pasa con el de @mdcospedal ? Uno es gracioso, el otro es  .....aberrante
+Opinion
+En el @PPopular están tan escandalizados con el tema de las tarjetas Black que se dedican a recolocar a los imputados
+Opinion
+Hacienda asegura que Anticorrupción no quiso actuar contra Rato http://t.co/Acs9EEm0SS  @UPyD @Herzogoff
+Opinion

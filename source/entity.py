@@ -10,8 +10,8 @@ class Entity:
 	def isInOpinions(self,value):
 		for opinion in self.opinions:
 			if opinion.opinion == value:
-				return true
-		return false
+				return True
+		return False
 		
 	def addNewAspects(self, newAspects):
 		for newAspect in newAspects:
@@ -20,8 +20,9 @@ class Entity:
 	
 	def addNewOpinion(self, newOpinion):
 		for opinion in self.opinions:
-			if not self.isInOpinions(opinion):
-				self.opinions.append(OP.Opinion(newOpinion))
+			if self.isInOpinions(newOpinion):
+				return
+		self.opinions.append(OP.Opinion(newOpinion))
 	
 	def debug(self):
 		print('Entity: ')

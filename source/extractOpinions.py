@@ -17,7 +17,8 @@ def main():
 			tweetAspects = xmlparser.extractAspects(tweet,tweetEntity)
 			entity = corpus.getEntity(tweetEntity)
 			entity.addNewAspects(tweetAspects)
-			entity.addNewOpinion(tweet)
+			reestructuredTweet = xmlparser.reestructure(tweet)
+			entity.addNewOpinion(reestructuredTweet)
 			i=i+1
 	corpus.debug()
 	
