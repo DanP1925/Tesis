@@ -3,8 +3,8 @@ import corpus as COR
 import sentiment as SEN
 
 def main():
-	doc = "D:\Ciclo 6\Tesis 2\stompol-tweets-train-tagged.xml"
-	#doc = r"D:\Ciclo 6\Tesis 2\Tesis\source\test\xmltestfile.xml"
+	#doc = "D:\Ciclo 6\Tesis 2\stompol-tweets-train-tagged.xml"
+	doc = r"D:\Ciclo 6\Tesis 2\Tesis\source\test\xmltestfile.xml"
 	
 	xmlparser = XML.XmlParser(doc)
 	tweets = xmlparser.root
@@ -18,7 +18,8 @@ def main():
 			entity = corpus.getEntity(tweetEntity)
 			for sentiment in tweet:
 				entity.addSentiment(SEN.Sentiment(sentiment.text, sentiment.get('aspect'), sentiment.get('polarity')))
-	corpus.debug()
+	corpus.generateGraphs()
+	
 	
 if __name__ == "__main__":
 	main()

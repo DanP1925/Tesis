@@ -28,6 +28,11 @@ class Corpus:
 				return entity
 		return None
 		
+	def generateGraphs(self):
+		for entity in self.entities:
+			entity.generateGraph()
+			entity.printMatrix()
+	
 	def debug(self):
 		for entity in self.entities:
 			entity.debug()
