@@ -27,12 +27,6 @@ class Corpus:
 			if entity.name == value:
 				return entity
 		return None
-		
-	def generateGraphs(self):
-		for entity in self.entities:
-			entity.generateGraph()
-			entity.printMatrix()
-			print()
 	
 	def debug(self):
 		for entity in self.entities:

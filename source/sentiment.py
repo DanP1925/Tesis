@@ -4,6 +4,7 @@ class Sentiment:
 		self.text = text
 		self.aspect = aspect
 		self.polarity = polarity
+		self.hValue = 0
 		
 	def termSimilarity(self,target):
 		if self.aspect == target.aspect:

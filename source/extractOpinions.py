@@ -19,7 +19,12 @@ def main():
 			entity.addReview()
 			for sentiment in tweet:
 				entity.addSentiment(SEN.Sentiment(sentiment.text, sentiment.get('aspect'), sentiment.get('polarity')))
-	corpus.generateGraphs()
+	for entity in corpus.entities:
+			entity.generateGraph()
+			entity.initializeLeaders()
+			entity.printMatrix()
+			print()
+	
 	
 	
 if __name__ == "__main__":
