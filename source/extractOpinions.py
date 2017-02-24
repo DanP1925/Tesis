@@ -16,6 +16,7 @@ def main():
 		corpus.addNewEntities(tweetEntities)
 		for tweetEntity in tweetEntities:
 			entity = corpus.getEntity(tweetEntity)
+			entity.addReview()
 			for sentiment in tweet:
 				entity.addSentiment(SEN.Sentiment(sentiment.text, sentiment.get('aspect'), sentiment.get('polarity')))
 	corpus.generateGraphs()

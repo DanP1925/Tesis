@@ -6,10 +6,16 @@ class Sentiment:
 		self.polarity = polarity
 		
 	def termSimilarity(self,target):
-		return 1
+		if self.aspect == target.aspect:
+			return 1
+		else:
+			return 0
 	
 	def polaritySimilarity(self,target):
-		return 1
+		if self.polarity == target.polarity:
+			return 1
+		else:
+			return 0
 		
 	def isEqual(self, newSentiment):
 		if self.text == newSentiment.text and self.polarity == newSentiment.polarity:

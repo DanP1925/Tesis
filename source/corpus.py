@@ -32,6 +32,7 @@ class Corpus:
 		for entity in self.entities:
 			entity.generateGraph()
 			entity.printMatrix()
+			print()
 	
 	def debug(self):
 		for entity in self.entities:
