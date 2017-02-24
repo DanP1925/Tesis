@@ -8,6 +8,7 @@ class Entity:
 		self.numberOfReviews = 0
 		self.sentiments = []
 		self.matrix = []
+		self.leaders = []
 		
 	def isInEntity(self, newSentiment):
 		for sentiment in self.sentiments:
@@ -39,11 +40,30 @@ class Entity:
 			for element in list:
 				if element < min:
 					element = 0
+			self.sentiments[i].calculateDegree(list)
 			self.matrix.append(list)
-			
-	def initializeLeaders(self):
+	
+	def obtainHNodes(self):
 		h = 0
+		i=0
 		heap = []
+		for sentiment in self.sentiments:
+			if (h==0 and sentiment.degree!=0):
+				heapq.heappush(heap,(sentiment.degree,i))
+				h += 1
+			else:
+				if (sentiment.degree>h and heap[0][0] > h):
+					heapq.heappush(heap,(sentiment.degree,i))
+					h += 1
+				elif (sentiment.degree>h and heap[0][0] == h):
+					heapq.heappop(heap)
+					heapq.heappush(heap,(sentiment.degree,i))
+			i+=1
+		return heap
+	
+	def initializeLeaders(self):
+		hnodes = self.obtainHNodes()
+		print(hnodes)
 			
 	def printMatrix(self):
 		for i in range(0,len(self.sentiments)):

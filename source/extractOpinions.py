@@ -22,9 +22,10 @@ def main():
 	for entity in corpus.entities:
 			entity.generateGraph()
 			entity.initializeLeaders()
-			entity.printMatrix()
+			for sentiment in entity.sentiments:
+				print(sentiment.degree)
+			#entity.printMatrix()
 			print()
-	
 	
 	
 if __name__ == "__main__":

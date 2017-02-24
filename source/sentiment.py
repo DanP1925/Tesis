@@ -4,7 +4,7 @@ class Sentiment:
 		self.text = text
 		self.aspect = aspect
 		self.polarity = polarity
-		self.hValue = 0
+		self.degree = 0
 		
 	def termSimilarity(self,target):
 		if self.aspect == target.aspect:
@@ -25,6 +25,13 @@ class Sentiment:
 		
 	def similarity(self, target):
 		return ((2/3)*self.termSimilarity(target) + (1/3)*self.polaritySimilarity(target))
+		
+	def calculateDegree(self, list):
+		degree = 0
+		for element in list:
+			if element !=0:
+				degree +=1
+		self.degree = degree
 	
 	def debug(self):
 		print('Sentiment')
