@@ -61,9 +61,21 @@ class Entity:
 			i+=1
 		return heap
 	
+	def hasLeaderNeighbors(self, hnode):
+		for index in self.leaders:
+			if self.matrix[hnode[1]][index] >0:
+				return True
+		return False
+	
 	def initializeLeaders(self):
 		hnodes = self.obtainHNodes()
+		hnodes.sort(reverse=True)
 		print(hnodes)
+		while len(hnodes) != 0:
+			hnode = hnodes.pop(0)
+			if not self.hasLeaderNeighbors(hnode):
+				self.leaders.append(hnode[1])
+		print(self.leaders)
 			
 	def printMatrix(self):
 		for i in range(0,len(self.sentiments)):

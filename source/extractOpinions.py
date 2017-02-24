@@ -22,8 +22,6 @@ def main():
 	for entity in corpus.entities:
 			entity.generateGraph()
 			entity.initializeLeaders()
-			for sentiment in entity.sentiments:
-				print(sentiment.degree)
 			#entity.printMatrix()
 			print()
 	
