@@ -32,9 +32,16 @@ class Corpus:
 	
 	def getTermDocumentMatrix(self, xmlparser):
 		tweets = xmlparser.root
+		stemmer = SnowballStemmer('spanish')
+		
 		for tweet in tweets:
 			rawTweet = xmlparser.reestructure(tweet)
-			
+			wordList = word_tokenize(rawTweet)
+			termList = []
+			for word in wordList:
+				term = stemmer.stem(word)
+				termList.append(term)
+			print(termList)
 	
 	def debug(self):
 		for entity in self.entities:
