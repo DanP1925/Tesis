@@ -1,4 +1,6 @@
 import entity as ENT
+from nltk import word_tokenize
+from nltk.stem import SnowballStemmer
 
 class Corpus:
 	
@@ -27,6 +29,12 @@ class Corpus:
 			if entity.name == value:
 				return entity
 		return None
+	
+	def getTermDocumentMatrix(self, xmlparser):
+		tweets = xmlparser.root
+		for tweet in tweets:
+			rawTweet = xmlparser.reestructure(tweet)
+			
 	
 	def debug(self):
 		for entity in self.entities:

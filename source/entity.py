@@ -70,12 +70,12 @@ class Entity:
 	def initializeLeaders(self):
 		hnodes = self.obtainHNodes()
 		hnodes.sort(reverse=True)
-		print(hnodes)
+		# print(hnodes)
 		while len(hnodes) != 0:
 			hnode = hnodes.pop(0)
 			if not self.hasLeaderNeighbors(hnode):
 				self.leaders.append(hnode[1])
-		print(self.leaders)
+		# print(self.leaders)
 			
 	def printMatrix(self):
 		for i in range(0,len(self.sentiments)):
