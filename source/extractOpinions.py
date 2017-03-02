@@ -1,20 +1,33 @@
 import xmlparser as XML
-import entities as ent
+import corpus as COR
+import sentiment as SEN
+import lsa as LAT
 
 def main():
-	doc = "D:\Ciclo 6\Tesis 2\stompol-tweets-train-tagged.xml"
-	#doc = r"D:\Ciclo 6\Tesis 2\Tesis\source\test\xmltestfile.xml"
+	#doc = "D:\Ciclo 6\Tesis 2\stompol-tweets-train-tagged.xml"
+	doc = r"D:\Ciclo 6\Tesis 2\Tesis\source\test\xmltestfile.xml"
 	
 	xmlparser = XML.XmlParser(doc)
 	tweets = xmlparser.root
-	entities = ent.Entities()
+	corpus = COR.Corpus()
 	
 	i=1
 	for tweet in tweets:
 		tweetEntities = xmlparser.extractEntity(tweet)
-		entities.addNewEntities(tweetEntities)
-		tweetAspects = xmlparser.extractAspects(tweet)
-		i=i+1
+		corpus.addNewEntities(tweetEntities)
+		for tweetEntity in tweetEntities:
+			entity = corpus.getEntity(tweetEntity)
+			entity.addReview()
+			for sentiment in tweet:
+				entity.addSentiment(SEN.Sentiment(sentiment.text, sentiment.get('aspect'), sentiment.get('polarity')))
+	
+	lsa  = LAT.LSA(corpus, xmlparser)
+	
+	for entity in corpus.entities:
+			entity.generateGraph()
+			entity.initializeLeaders()
+			#entity.printMatrix()
+			print()
 	
 	
 if __name__ == "__main__":
