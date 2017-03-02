@@ -11,11 +11,10 @@ ENT	D:\Ciclo 6\Tesis 2\Tesis\source\corpus.py	1;"	kind:namespace	line:1	language
 ET	D:\Ciclo 6\Tesis 2\Tesis\source\xmlparser.py	1;"	kind:namespace	line:1	language:Python
 Entity	D:\Ciclo 6\Tesis 2\Tesis\source\entity.py	4;"	kind:class	line:4	language:Python	inherits:
 LAT	D:\Ciclo 6\Tesis 2\Tesis\source\extractOpinions.py	4;"	kind:namespace	line:4	language:Python
-LSA	D:\Ciclo 6\Tesis 2\Tesis\source\lsa.py	1;"	kind:class	line:1	language:Python	inherits:
+LSA	D:\Ciclo 6\Tesis 2\Tesis\source\lsa.py	3;"	kind:class	line:3	language:Python	inherits:
 SEN	D:\Ciclo 6\Tesis 2\Tesis\source\extractOpinions.py	3;"	kind:namespace	line:3	language:Python
 Sentiment	D:\Ciclo 6\Tesis 2\Tesis\source\sentiment.py	1;"	kind:class	line:1	language:Python	inherits:
-SnowballStemmer	D:\Ciclo 6\Tesis 2\Tesis\source\corpus.py	4;"	kind:namespace	line:4	language:Python
-XML	D:\Ciclo 6\Tesis 2\Tesis\source\corpus.py	2;"	kind:namespace	line:2	language:Python
+SnowballStemmer	D:\Ciclo 6\Tesis 2\Tesis\source\corpus.py	3;"	kind:namespace	line:3	language:Python
 XML	D:\Ciclo 6\Tesis 2\Tesis\source\extractOpinions.py	1;"	kind:namespace	line:1	language:Python
 XML	D:\Ciclo 6\Tesis 2\Tesis\source\test\testcorpus.py	5;"	kind:namespace	line:5	language:Python
 XML	D:\Ciclo 6\Tesis 2\Tesis\source\test\testextractOpinion.py	2;"	kind:namespace	line:2	language:Python
@@ -23,7 +22,7 @@ XML	D:\Ciclo 6\Tesis 2\Tesis\source\test\testxmlparser.py	5;"	kind:namespace	lin
 XmlParser	D:\Ciclo 6\Tesis 2\Tesis\source\xmlparser.py	3;"	kind:class	line:3	language:Python	inherits:
 __init__	D:\Ciclo 6\Tesis 2\Tesis\source\corpus.py	8;"	kind:member	line:8	language:Python	class:Corpus	access:public
 __init__	D:\Ciclo 6\Tesis 2\Tesis\source\entity.py	6;"	kind:member	line:6	language:Python	class:Entity	access:public
-__init__	D:\Ciclo 6\Tesis 2\Tesis\source\lsa.py	3;"	kind:member	line:3	language:Python	class:LSA	access:public
+__init__	D:\Ciclo 6\Tesis 2\Tesis\source\lsa.py	5;"	kind:member	line:5	language:Python	class:LSA	access:public
 __init__	D:\Ciclo 6\Tesis 2\Tesis\source\sentiment.py	3;"	kind:member	line:3	language:Python	class:Sentiment	access:public
 __init__	D:\Ciclo 6\Tesis 2\Tesis\source\xmlparser.py	5;"	kind:member	line:5	language:Python	class:XmlParser	access:public
 addNewEntities	D:\Ciclo 6\Tesis 2\Tesis\source\corpus.py	17;"	kind:member	line:17	language:Python	class:Corpus	access:public
@@ -32,9 +31,10 @@ addReview	D:\Ciclo 6\Tesis 2\Tesis\source\entity.py	86;"	kind:member	line:86	lan
 addSentiment	D:\Ciclo 6\Tesis 2\Tesis\source\entity.py	19;"	kind:member	line:19	language:Python	class:Entity	access:public
 asEntityList	D:\Ciclo 6\Tesis 2\Tesis\source\corpus.py	22;"	kind:member	line:22	language:Python	class:Corpus	access:public
 calculateDegree	D:\Ciclo 6\Tesis 2\Tesis\source\sentiment.py	29;"	kind:member	line:29	language:Python	class:Sentiment	access:public
+cleanWord	D:\Ciclo 6\Tesis 2\Tesis\source\corpus.py	42;"	kind:member	line:42	language:Python	class:Corpus	access:public
 comboSuite	D:\Ciclo 6\Tesis 2\Tesis\source\test\testextractOpinion.py	15;"	kind:variable	line:15	language:Python
 corpus	D:\Ciclo 6\Tesis 2\Tesis\source\test\testextractOpinion.py	3;"	kind:namespace	line:3	language:Python
-debug	D:\Ciclo 6\Tesis 2\Tesis\source\corpus.py	39;"	kind:member	line:39	language:Python	class:Corpus	access:public
+debug	D:\Ciclo 6\Tesis 2\Tesis\source\corpus.py	78;"	kind:member	line:78	language:Python	class:Corpus	access:public
 debug	D:\Ciclo 6\Tesis 2\Tesis\source\entity.py	89;"	kind:member	line:89	language:Python	class:Entity	access:public
 debug	D:\Ciclo 6\Tesis 2\Tesis\source\sentiment.py	36;"	kind:member	line:36	language:Python	class:Sentiment	access:public
 doc	D:\Ciclo 6\Tesis 2\Tesis\source\test\testcorpus.py	10;"	kind:variable	line:10	language:Python	class:addNewEntitiesMethod
@@ -46,13 +46,15 @@ extractEntity	D:\Ciclo 6\Tesis 2\Tesis\source\xmlparser.py	9;"	kind:member	line:
 extractEntityMethod	D:\Ciclo 6\Tesis 2\Tesis\source\test\testxmlparser.py	7;"	kind:class	line:7	language:Python	inherits:unittest.TestCase
 generateGraph	D:\Ciclo 6\Tesis 2\Tesis\source\entity.py	31;"	kind:member	line:31	language:Python	class:Entity	access:public
 getEntity	D:\Ciclo 6\Tesis 2\Tesis\source\corpus.py	28;"	kind:member	line:28	language:Python	class:Corpus	access:public
-getTermDocumentMatrix	D:\Ciclo 6\Tesis 2\Tesis\source\corpus.py	34;"	kind:member	line:34	language:Python	class:Corpus	access:public
+getTermDocumentMatrix	D:\Ciclo 6\Tesis 2\Tesis\source\corpus.py	52;"	kind:member	line:52	language:Python	class:Corpus	access:public
+get_stop_words	D:\Ciclo 6\Tesis 2\Tesis\source\corpus.py	4;"	kind:namespace	line:4	language:Python
 hasLeaderNeighbors	D:\Ciclo 6\Tesis 2\Tesis\source\entity.py	64;"	kind:member	line:64	language:Python	class:Entity	access:public
 heapq	D:\Ciclo 6\Tesis 2\Tesis\source\entity.py	2;"	kind:namespace	line:2	language:Python
 initializeLeaders	D:\Ciclo 6\Tesis 2\Tesis\source\entity.py	70;"	kind:member	line:70	language:Python	class:Entity	access:public
 isEqual	D:\Ciclo 6\Tesis 2\Tesis\source\sentiment.py	21;"	kind:member	line:21	language:Python	class:Sentiment	access:public
 isInEntities	D:\Ciclo 6\Tesis 2\Tesis\source\corpus.py	11;"	kind:member	line:11	language:Python	class:Corpus	access:public
 isInEntity	D:\Ciclo 6\Tesis 2\Tesis\source\entity.py	13;"	kind:member	line:13	language:Python	class:Entity	access:public
+isValidWord	D:\Ciclo 6\Tesis 2\Tesis\source\corpus.py	34;"	kind:member	line:34	language:Python	class:Corpus	access:public
 main	D:\Ciclo 6\Tesis 2\Tesis\source\extractOpinions.py	6;"	kind:function	line:6	language:Python	access:public
 math	D:\Ciclo 6\Tesis 2\Tesis\source\entity.py	1;"	kind:namespace	line:1	language:Python
 minimumValue	D:\Ciclo 6\Tesis 2\Tesis\source\entity.py	23;"	kind:member	line:23	language:Python	class:Entity	access:public
@@ -62,8 +64,10 @@ os	D:\Ciclo 6\Tesis 2\Tesis\source\test\testxmlparser.py	3;"	kind:namespace	line
 polaritySimilarity	D:\Ciclo 6\Tesis 2\Tesis\source\sentiment.py	15;"	kind:member	line:15	language:Python	class:Sentiment	access:public
 printMatrix	D:\Ciclo 6\Tesis 2\Tesis\source\entity.py	80;"	kind:member	line:80	language:Python	class:Entity	access:public
 reestructure	D:\Ciclo 6\Tesis 2\Tesis\source\xmlparser.py	41;"	kind:member	line:41	language:Python	class:XmlParser	access:public
+scipy	D:\Ciclo 6\Tesis 2\Tesis\source\lsa.py	1;"	kind:namespace	line:1	language:Python
 setUp	D:\Ciclo 6\Tesis 2\Tesis\source\test\testcorpus.py	15;"	kind:member	line:15	language:Python	class:addNewEntitiesMethod	access:public
 similarity	D:\Ciclo 6\Tesis 2\Tesis\source\sentiment.py	26;"	kind:member	line:26	language:Python	class:Sentiment	access:public
+singularValueDecomposition	D:\Ciclo 6\Tesis 2\Tesis\source\lsa.py	8;"	kind:member	line:8	language:Python	class:LSA	access:public
 suiteCorpus	D:\Ciclo 6\Tesis 2\Tesis\source\test\testextractOpinion.py	8;"	kind:variable	line:8	language:Python
 suiteList	D:\Ciclo 6\Tesis 2\Tesis\source\test\testextractOpinion.py	10;"	kind:variable	line:10	language:Python
 suiteXmlExtractAspect	D:\Ciclo 6\Tesis 2\Tesis\source\test\testextractOpinion.py	7;"	kind:variable	line:7	language:Python
@@ -85,7 +89,7 @@ tweets	D:\Ciclo 6\Tesis 2\Tesis\source\test\testxmlparser.py	28;"	kind:variable	
 unittest	D:\Ciclo 6\Tesis 2\Tesis\source\test\testcorpus.py	1;"	kind:namespace	line:1	language:Python
 unittest	D:\Ciclo 6\Tesis 2\Tesis\source\test\testextractOpinion.py	1;"	kind:namespace	line:1	language:Python
 unittest	D:\Ciclo 6\Tesis 2\Tesis\source\test\testxmlparser.py	1;"	kind:namespace	line:1	language:Python
-word_tokenize	D:\Ciclo 6\Tesis 2\Tesis\source\corpus.py	3;"	kind:namespace	line:3	language:Python
+word_tokenize	D:\Ciclo 6\Tesis 2\Tesis\source\corpus.py	2;"	kind:namespace	line:2	language:Python
 xmlparser	D:\Ciclo 6\Tesis 2\Tesis\source\test\testcorpus.py	12;"	kind:variable	line:12	language:Python	class:addNewEntitiesMethod
 xmlparser	D:\Ciclo 6\Tesis 2\Tesis\source\test\testxmlparser.py	11;"	kind:variable	line:11	language:Python	class:extractEntityMethod
 xmlparser	D:\Ciclo 6\Tesis 2\Tesis\source\test\testxmlparser.py	27;"	kind:variable	line:27	language:Python	class:extractAspectMethod

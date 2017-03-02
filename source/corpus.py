@@ -73,6 +73,7 @@ class Corpus:
 			for key in termList:
 				if len(termList[key])<numTweets:
 					termList[key].append(0)
+		return termList
 	
 	def debug(self):
 		for entity in self.entities:
