@@ -44,8 +44,9 @@ class Corpus:
 		term = stemmer.stem(word)
 		if term[0] == "¿":
 			term = term[1:]
-		if term[-1] == "_":
-			term = term[:-1]
+		if term:
+			if term[-1] == "_":
+				term = term[:-1]
 		return term
 	
 	def getTermDocumentMatrix(self, xmlparser):
@@ -64,13 +65,14 @@ class Corpus:
 						newList.append(1)
 						termList[term] = newList
 					else:
-						termList[term].append(1)
+						if len(termList[term])==numTweets+1:
+							termList[term][-1] +=1
+						else:
+							termList[term].append(1)
 			numTweets +=1
 			for key in termList:
 				if len(termList[key])<numTweets:
 					termList[key].append(0)
-		for key in termList:
-			print(termList[key])
 	
 	def debug(self):
 		for entity in self.entities:
