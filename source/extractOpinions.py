@@ -22,6 +22,7 @@ def main():
 				entity.addSentiment(SEN.Sentiment(sentiment.text, sentiment.get('aspect'), sentiment.get('polarity')))
 	
 	lsa  = LAT.LSA(corpus, xmlparser)
+	lsa.tfidf()
 	lsa.singularValueDecomposition()
 	lsa.reduceDimension()
 	lsa.reconstructMatrix()

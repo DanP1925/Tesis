@@ -11,7 +11,7 @@ ENT	D:\Ciclo 6\Tesis 2\Tesis\source\corpus.py	1;"	kind:namespace	line:1	language
 ET	D:\Ciclo 6\Tesis 2\Tesis\source\xmlparser.py	1;"	kind:namespace	line:1	language:Python
 Entity	D:\Ciclo 6\Tesis 2\Tesis\source\entity.py	4;"	kind:class	line:4	language:Python	inherits:
 LAT	D:\Ciclo 6\Tesis 2\Tesis\source\extractOpinions.py	4;"	kind:namespace	line:4	language:Python
-LSA	D:\Ciclo 6\Tesis 2\Tesis\source\lsa.py	3;"	kind:class	line:3	language:Python	inherits:
+LSA	D:\Ciclo 6\Tesis 2\Tesis\source\lsa.py	5;"	kind:class	line:5	language:Python	inherits:
 SEN	D:\Ciclo 6\Tesis 2\Tesis\source\extractOpinions.py	3;"	kind:namespace	line:3	language:Python
 Sentiment	D:\Ciclo 6\Tesis 2\Tesis\source\sentiment.py	1;"	kind:class	line:1	language:Python	inherits:
 SnowballStemmer	D:\Ciclo 6\Tesis 2\Tesis\source\corpus.py	3;"	kind:namespace	line:3	language:Python
@@ -22,7 +22,7 @@ XML	D:\Ciclo 6\Tesis 2\Tesis\source\test\testxmlparser.py	5;"	kind:namespace	lin
 XmlParser	D:\Ciclo 6\Tesis 2\Tesis\source\xmlparser.py	3;"	kind:class	line:3	language:Python	inherits:
 __init__	D:\Ciclo 6\Tesis 2\Tesis\source\corpus.py	8;"	kind:member	line:8	language:Python	class:Corpus	access:public
 __init__	D:\Ciclo 6\Tesis 2\Tesis\source\entity.py	6;"	kind:member	line:6	language:Python	class:Entity	access:public
-__init__	D:\Ciclo 6\Tesis 2\Tesis\source\lsa.py	5;"	kind:member	line:5	language:Python	class:LSA	access:public
+__init__	D:\Ciclo 6\Tesis 2\Tesis\source\lsa.py	7;"	kind:member	line:7	language:Python	class:LSA	access:public
 __init__	D:\Ciclo 6\Tesis 2\Tesis\source\sentiment.py	3;"	kind:member	line:3	language:Python	class:Sentiment	access:public
 __init__	D:\Ciclo 6\Tesis 2\Tesis\source\xmlparser.py	5;"	kind:member	line:5	language:Python	class:XmlParser	access:public
 addNewEntities	D:\Ciclo 6\Tesis 2\Tesis\source\corpus.py	17;"	kind:member	line:17	language:Python	class:Corpus	access:public
@@ -55,19 +55,25 @@ isEqual	D:\Ciclo 6\Tesis 2\Tesis\source\sentiment.py	21;"	kind:member	line:21	la
 isInEntities	D:\Ciclo 6\Tesis 2\Tesis\source\corpus.py	11;"	kind:member	line:11	language:Python	class:Corpus	access:public
 isInEntity	D:\Ciclo 6\Tesis 2\Tesis\source\entity.py	13;"	kind:member	line:13	language:Python	class:Entity	access:public
 isValidWord	D:\Ciclo 6\Tesis 2\Tesis\source\corpus.py	34;"	kind:member	line:34	language:Python	class:Corpus	access:public
+l2norm	D:\Ciclo 6\Tesis 2\Tesis\source\lsa.py	41;"	kind:member	line:41	language:Python	class:LSA	access:public
 main	D:\Ciclo 6\Tesis 2\Tesis\source\extractOpinions.py	6;"	kind:function	line:6	language:Python	access:public
 math	D:\Ciclo 6\Tesis 2\Tesis\source\entity.py	1;"	kind:namespace	line:1	language:Python
+math	D:\Ciclo 6\Tesis 2\Tesis\source\lsa.py	3;"	kind:namespace	line:3	language:Python
 minimumValue	D:\Ciclo 6\Tesis 2\Tesis\source\entity.py	23;"	kind:member	line:23	language:Python	class:Entity	access:public
+numpy	D:\Ciclo 6\Tesis 2\Tesis\source\lsa.py	2;"	kind:namespace	line:2	language:Python
 obtainHNodes	D:\Ciclo 6\Tesis 2\Tesis\source\entity.py	46;"	kind:member	line:46	language:Python	class:Entity	access:public
 os	D:\Ciclo 6\Tesis 2\Tesis\source\test\testcorpus.py	3;"	kind:namespace	line:3	language:Python
 os	D:\Ciclo 6\Tesis 2\Tesis\source\test\testxmlparser.py	3;"	kind:namespace	line:3	language:Python
 polaritySimilarity	D:\Ciclo 6\Tesis 2\Tesis\source\sentiment.py	15;"	kind:member	line:15	language:Python	class:Sentiment	access:public
 printMatrix	D:\Ciclo 6\Tesis 2\Tesis\source\entity.py	80;"	kind:member	line:80	language:Python	class:Entity	access:public
+pyMatrix	D:\Ciclo 6\Tesis 2\Tesis\source\lsa.py	15;"	kind:member	line:15	language:Python	class:LSA	access:public
+reconstructMatrix	D:\Ciclo 6\Tesis 2\Tesis\source\lsa.py	55;"	kind:member	line:55	language:Python	class:LSA	access:public
+reduceDimension	D:\Ciclo 6\Tesis 2\Tesis\source\lsa.py	47;"	kind:member	line:47	language:Python	class:LSA	access:public
 reestructure	D:\Ciclo 6\Tesis 2\Tesis\source\xmlparser.py	41;"	kind:member	line:41	language:Python	class:XmlParser	access:public
 scipy	D:\Ciclo 6\Tesis 2\Tesis\source\lsa.py	1;"	kind:namespace	line:1	language:Python
 setUp	D:\Ciclo 6\Tesis 2\Tesis\source\test\testcorpus.py	15;"	kind:member	line:15	language:Python	class:addNewEntitiesMethod	access:public
 similarity	D:\Ciclo 6\Tesis 2\Tesis\source\sentiment.py	26;"	kind:member	line:26	language:Python	class:Sentiment	access:public
-singularValueDecomposition	D:\Ciclo 6\Tesis 2\Tesis\source\lsa.py	8;"	kind:member	line:8	language:Python	class:LSA	access:public
+singularValueDecomposition	D:\Ciclo 6\Tesis 2\Tesis\source\lsa.py	38;"	kind:member	line:38	language:Python	class:LSA	access:public
 suiteCorpus	D:\Ciclo 6\Tesis 2\Tesis\source\test\testextractOpinion.py	8;"	kind:variable	line:8	language:Python
 suiteList	D:\Ciclo 6\Tesis 2\Tesis\source\test\testextractOpinion.py	10;"	kind:variable	line:10	language:Python
 suiteXmlExtractAspect	D:\Ciclo 6\Tesis 2\Tesis\source\test\testextractOpinion.py	7;"	kind:variable	line:7	language:Python
@@ -83,12 +89,14 @@ testAspectExtractionSingle	D:\Ciclo 6\Tesis 2\Tesis\source\test\testxmlparser.py
 testEntityExtractionMultiple	D:\Ciclo 6\Tesis 2\Tesis\source\test\testxmlparser.py	17;"	kind:member	line:17	language:Python	class:extractEntityMethod	access:public
 testEntityExtractionMultipleOnOneEntity	D:\Ciclo 6\Tesis 2\Tesis\source\test\testxmlparser.py	20;"	kind:member	line:20	language:Python	class:extractEntityMethod	access:public
 testEntityExtractionSingle	D:\Ciclo 6\Tesis 2\Tesis\source\test\testxmlparser.py	14;"	kind:member	line:14	language:Python	class:extractEntityMethod	access:public
+tfidf	D:\Ciclo 6\Tesis 2\Tesis\source\lsa.py	28;"	kind:member	line:28	language:Python	class:LSA	access:public
 tweets	D:\Ciclo 6\Tesis 2\Tesis\source\test\testcorpus.py	13;"	kind:variable	line:13	language:Python	class:addNewEntitiesMethod
 tweets	D:\Ciclo 6\Tesis 2\Tesis\source\test\testxmlparser.py	12;"	kind:variable	line:12	language:Python	class:extractEntityMethod
 tweets	D:\Ciclo 6\Tesis 2\Tesis\source\test\testxmlparser.py	28;"	kind:variable	line:28	language:Python	class:extractAspectMethod
 unittest	D:\Ciclo 6\Tesis 2\Tesis\source\test\testcorpus.py	1;"	kind:namespace	line:1	language:Python
 unittest	D:\Ciclo 6\Tesis 2\Tesis\source\test\testextractOpinion.py	1;"	kind:namespace	line:1	language:Python
 unittest	D:\Ciclo 6\Tesis 2\Tesis\source\test\testxmlparser.py	1;"	kind:namespace	line:1	language:Python
+wordTotal	D:\Ciclo 6\Tesis 2\Tesis\source\lsa.py	21;"	kind:member	line:21	language:Python	class:LSA	access:public
 word_tokenize	D:\Ciclo 6\Tesis 2\Tesis\source\corpus.py	2;"	kind:namespace	line:2	language:Python
 xmlparser	D:\Ciclo 6\Tesis 2\Tesis\source\test\testcorpus.py	12;"	kind:variable	line:12	language:Python	class:addNewEntitiesMethod
 xmlparser	D:\Ciclo 6\Tesis 2\Tesis\source\test\testxmlparser.py	11;"	kind:variable	line:11	language:Python	class:extractEntityMethod
