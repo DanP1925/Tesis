@@ -23,6 +23,8 @@ def main():
 	
 	lsa  = LAT.LSA(corpus, xmlparser)
 	lsa.singularValueDecomposition()
+	lsa.reduceDimension()
+	lsa.reconstructMatrix()
 	
 	for entity in corpus.entities:
 			entity.generateGraph()
