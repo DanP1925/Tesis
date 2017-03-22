@@ -28,12 +28,12 @@ class Entity:
 		else:
 			return 0
 			
-	def generateGraph(self):
+	def generateGraph(self,lsa):
 		for i in range(0,len(self.sentiments)):
 			list = []
 			for j in range(0,len(self.sentiments)):
 				if i != j:
-					list.append(self.sentiments[i].similarity(self.sentiments[j]))
+					list.append(self.sentiments[i].similarity(self.sentiments[j],lsa))
 				else:
 					list.append(0)
 			min = self.minimumValue(list, math.ceil(self.numberOfReviews/5))
@@ -70,12 +70,10 @@ class Entity:
 	def initializeLeaders(self):
 		hnodes = self.obtainHNodes()
 		hnodes.sort(reverse=True)
-		# print(hnodes)
 		while len(hnodes) != 0:
 			hnode = hnodes.pop(0)
 			if not self.hasLeaderNeighbors(hnode):
 				self.leaders.append(hnode[1])
-		# print(self.leaders)
 			
 	def printMatrix(self):
 		for i in range(0,len(self.sentiments)):

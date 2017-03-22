@@ -69,3 +69,21 @@ class LSA:
 	def reconstructMatrix(self):
 		self.valueMatrix = numpy.dot(numpy.dot(self.u, scipy.linalg.diagsvd( self.sigma,len(self.tDMatrix),len(self.vt))),self.vt)
 		
+	def isInTDMatrix(self, target):
+		for key in self.tDMatrix:
+			if target == key:
+				return True
+		return False
+	
+	def getvector(self, target):
+		i = 0
+		for key in self.tDMatrix:
+			if target == key:
+				break
+			i += 1
+		return self.valueMatrix[i]
+	
+	def printvalueMatrix(self):
+		for vector in self.valueMatrix:
+			print(vector)
+				

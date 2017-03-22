@@ -11,7 +11,6 @@ def main():
 	tweets = xmlparser.root
 	corpus = COR.Corpus()
 	
-	i=1
 	for tweet in tweets:
 		tweetEntities = xmlparser.extractEntity(tweet)
 		corpus.addNewEntities(tweetEntities)
@@ -19,7 +18,7 @@ def main():
 			entity = corpus.getEntity(tweetEntity)
 			entity.addReview()
 			for sentiment in tweet:
-				entity.addSentiment(SEN.Sentiment(sentiment.text, sentiment.get('aspect'), sentiment.get('polarity')))
+				entity.addSentiment(SEN.Sentiment(sentiment.text, sentiment.get('aspect'), sentiment.get('polarity')))					
 	
 	lsa  = LAT.LSA(corpus, xmlparser)
 	lsa.tfidf()
@@ -28,10 +27,10 @@ def main():
 	lsa.reconstructMatrix()
 	
 	for entity in corpus.entities:
-			entity.generateGraph()
-			entity.initializeLeaders()
-			#entity.printMatrix()
-			print()
+		entity.generateGraph(lsa)
+		entity.initializeLeaders()
+		# entity.printMatrix()
+		print()
 	
 	
 if __name__ == "__main__":
