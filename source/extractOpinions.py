@@ -18,8 +18,8 @@ def main():
 			entity = corpus.getEntity(tweetEntity)
 			entity.addReview()
 			for sentiment in tweet:
-				entity.addSentiment(SEN.Sentiment(sentiment.text, sentiment.get('aspect'), sentiment.get('polarity')))					
-	
+				entity.addSentiment(SEN.Sentiment(sentiment.text, sentiment.get('aspect'), sentiment.get('polarity')))
+				
 	lsa  = LAT.LSA(corpus, xmlparser)
 	lsa.tfidf()
 	lsa.singularValueDecomposition()
@@ -27,11 +27,12 @@ def main():
 	lsa.reconstructMatrix()
 	
 	for entity in corpus.entities:
-		entity.generateGraph(lsa)
-		entity.initializeLeaders()
-		# entity.printMatrix()
-		print()
-	
+		entity.obtainLeaders()
+		# entity.generateGraph(lsa)
+		# entity.initializeLeaders()
+		# previousLeaders = list(entity.leaders)
+		# distances = entity.getDistances()
+		# print()
 	
 if __name__ == "__main__":
 	main()

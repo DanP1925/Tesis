@@ -1,5 +1,6 @@
 import math
 import heapq
+import opinionGraph as GRAPH
 
 class Entity:
 
@@ -7,6 +8,7 @@ class Entity:
 		self.name = name
 		self.numberOfReviews = 0
 		self.sentiments = []
+		self.graph = GRAPH.opinionGraph()
 		self.matrix = []
 		self.leaders = []
 		
@@ -28,20 +30,10 @@ class Entity:
 		else:
 			return 0
 			
-	def generateGraph(self,lsa):
-		for i in range(0,len(self.sentiments)):
-			list = []
-			for j in range(0,len(self.sentiments)):
-				if i != j:
-					list.append(self.sentiments[i].similarity(self.sentiments[j],lsa))
-				else:
-					list.append(0)
-			min = self.minimumValue(list, math.ceil(self.numberOfReviews/5))
-			for element in list:
-				if element < min:
-					element = 0
-			self.sentiments[i].calculateDegree(list)
-			self.matrix.append(list)
+	def obtainLeaders(self):
+		self.graph.setNodes(self.sentiments)
+		self.graph.setEdges(self.sentiments)
+		return 0
 	
 	def obtainHNodes(self):
 		h = 0
@@ -74,6 +66,72 @@ class Entity:
 			hnode = hnodes.pop(0)
 			if not self.hasLeaderNeighbors(hnode):
 				self.leaders.append(hnode[1])
+			
+	def minDist(self, unvisited):
+		min = float("inf")
+		index = -1
+		for i in range(0,len(unvisited)):
+			if unvisited[i][1] < min:
+				min = unvisited[i][1]
+				index = i
+		return index
+
+	def isInUnvisited(self, index, unvisited):
+		for element in unvisited:
+			if element[0] == index:
+				return True
+		return False
+		
+	def getNeighbors(self, index, unvisited):
+		neighbors = []
+		for i in range(0,len(self.matrix[index])) :
+			if self.matrix[index][i] > 0 and self.isInUnvisited(index,unvisited):
+				neighbors.append(i)
+		return neighbors
+		
+	def getDistanceOfUnvisited(self, unvisited, neighbor):
+		for element in unvisited:
+			if element[0] == neighbor:
+				return element[1]
+				
+	def setDistanceOfUnvisited(self, alt, unvisited, neighbor):
+		for element in unvisited:
+			if element[0] == neighbor:
+				element[1] = alt
+				break
+		
+	def dijkstra(self, target, leader):
+		unvisited = []
+		
+		for u in range(0,len(self.matrix)):
+			dist = float("inf")
+			node = [u,dist]
+			unvisited.append(node)
+			
+		unvisited[leader][1] = 0
+		
+		while len(unvisited) > 0:
+			index = self.minDist(unvisited)
+			v = unvisited[index]
+			neighbors = self.getNeighbors(v[0], unvisited)
+			for neighbor in neighbors:
+				if neighbor == target:
+					return self.getDistanceOfUnvisited(unvisited,neighbor)
+				alt = v[1] + 1
+				if alt < self.getDistanceOfUnvisited(unvisited,neighbor):
+					self.setDistanceOfUnvisited(alt, unvisited,neighbor)
+			unvisited.pop(index)
+		return float("inf")
+			
+	def getDistances(self):
+		distances = []
+		for i in range(0,len(self.matrix)):
+			distance = []
+			for leader in self.leaders:
+				distance.append(1)
+				distance.append(self.dijkstra(i,leader))
+			distances.append((distance,i))
+		return distances
 			
 	def printMatrix(self):
 		for i in range(0,len(self.sentiments)):

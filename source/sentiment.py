@@ -43,10 +43,27 @@ class Sentiment:
 		return sum1/n1
 	
 	def polaritySimilarity(self, target):
-		if self.polarity == target.polarity:
-			return 1
+		if self.polarity == 'N':
+			if target.polarity == 'N':
+				return 1
+			elif target.polarity == 'P':
+				return -1
+			else:
+				return 0
+		elif self.polarity == 'P':
+			if target.polarity == 'N':
+				return -1
+			elif target.polarity == 'P':
+				return 1
+			else:
+				return 0
 		else:
-			return 0
+			if target.polarity == 'N':
+				return 0
+			elif target.polarity == 'P':
+				return 0
+			else:
+				return 1
 		
 	def isEqual(self, newSentiment):
 		if self.text == newSentiment.text and self.polarity == newSentiment.polarity:
@@ -59,7 +76,7 @@ class Sentiment:
 	def calculateDegree(self, list):
 		degree = 0
 		for element in list:
-			if element !=0:
+			if element != 0:
 				degree +=1
 		self.degree = degree
 	
