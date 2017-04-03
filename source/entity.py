@@ -1,3 +1,4 @@
+import review as REV
 import math
 import heapq
 import opinionGraph as GRAPH
@@ -6,22 +7,15 @@ class Entity:
 
 	def __init__(self, name):
 		self.name = name
-		self.numberOfReviews = 0
-		self.sentiments = []
+		self.reviews = []
 		self.graph = GRAPH.opinionGraph()
 		self.matrix = []
 		self.leaders = []
+
+	def addReview(self,tweet):
+		newReview = REV.review(tweet)
+		self.reviews.append(newReview)
 		
-	def isInEntity(self, newSentiment):
-		for sentiment in self.sentiments:
-			if sentiment.isEqual(newSentiment):
-				return True
-		return False
-		
-	def addSentiment(self, newSentiment):
-		if not self.isInEntity(newSentiment):
-			self.sentiments.append(newSentiment)
-			
 	def minimumValue(self, targetList, k):
 		auxSet = set(targetList)
 		sortedSet = sorted(auxSet, reverse = True)
@@ -138,9 +132,6 @@ class Entity:
 			for j in range(0, len(self.sentiments)):
 				print(str(self.matrix[i][j]) + " ", end ='')
 			print()
-			
-	def addReview(self):
-		self.numberOfReviews += 1
 	
 	def debug(self):
 		print('Entity')

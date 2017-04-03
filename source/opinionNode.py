@@ -7,7 +7,9 @@ class opinionNode:
 			
 		def setEdges(self, sentiments):
 			for i in range(0,self.sentiments):
-				if self.index != j
+				if self.index != j:
+					self.edges.append(self.sentiment.similarity(self.sentiment[i]),lsa)
+				
 				
 		# for i in range(0,len(self.sentiments)):
 			# list = []

@@ -10,7 +10,6 @@ class Sentiment:
 		self.text = text
 		self.aspect = aspect
 		self.polarity = polarity
-		self.degree = 0
 		
 	def termSimilarity(self, target, lsa):
 		sum1 = float(0)

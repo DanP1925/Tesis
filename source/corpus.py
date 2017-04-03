@@ -8,16 +8,16 @@ class Corpus:
 	def __init__(self):
 		self.entities = []
 	
+	def addNewEntities(self, newEntities):
+		for newEntity in newEntities:
+			if not self.isInEntities(newEntity):
+				self.entities.append(ENT.Entity(newEntity))
+				
 	def isInEntities(self, value):
 		for entity in self.entities:
 			if entity.name == value:
 				return True
 		return False
-	
-	def addNewEntities(self, newEntities):
-		for newEntity in newEntities:
-			if not self.isInEntities(newEntity):
-				self.entities.append(ENT.Entity(newEntity))
 				
 	def asEntityList(self):
 		result = []
@@ -30,24 +30,6 @@ class Corpus:
 			if entity.name == value:
 				return entity
 		return None
-		
-	def isValidWord(self,word):
-		banned = [ '@','"', ':', ".", ",", "#", "http", "\"\"", "?", "-", '``', "\'\'", "...", "!","(",")", "y","q","x","a","Y","X",";", "d"]
-		stopwords = get_stop_words('spanish')
-		if not word in stopwords and not word in banned:
-			if not(word[0]=="/" and word[1]=="/"):
-				return True
-		return False
-	
-	def cleanWord(self, word):
-		stemmer = SnowballStemmer('spanish')
-		term = stemmer.stem(word)
-		if term[0] == "¿":
-			term = term[1:]
-		if term:
-			if term[-1] == "_":
-				term = term[:-1]
-		return term
 	
 	def getTermDocumentMatrix(self, xmlparser):
 		tweets = xmlparser.root
@@ -74,6 +56,24 @@ class Corpus:
 				if len(termList[key])<numTweets:
 					termList[key].append(0)
 		return termList
+	
+	def isValidWord(self,word):
+		banned = [ '@','"', ':', ".", ",", "#", "http", "\"\"", "?", "-", '``', "\'\'", "...", "!","(",")", "y","q","x","a","Y","X",";", "d"]
+		stopwords = get_stop_words('spanish')
+		if not word in stopwords and not word in banned:
+			if not(word[0]=="/" and word[1]=="/"):
+				return True
+		return False
+		
+	def cleanWord(self, word):
+		stemmer = SnowballStemmer('spanish')
+		term = stemmer.stem(word)
+		if term[0] == "¿":
+			term = term[1:]
+		if term:
+			if term[-1] == "_":
+				term = term[:-1]
+		return term
 	
 	def debug(self):
 		for entity in self.entities:
