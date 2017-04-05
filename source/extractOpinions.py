@@ -17,11 +17,11 @@ def main():
 			entity = corpus.getEntity(tweetEntity)
 			entity.addReview(tweet)
 			
-	lsa  = LAT.LSA(corpus, xmlparser)
-	# lsa.tfidf()
-	# lsa.singularValueDecomposition()
-	# lsa.reduceDimension()
-	# lsa.reconstructMatrix()
+	lsa  = LAT.LSA(tweets)
+	lsa.singularValueDecomposition()
+	lsa.reduceDimension()
+	lsa.reconstructMatrix()
+	corpus.assignSemanticSimilarity(lsa)
 	
 	# for entity in corpus.entities:
 		# entity.obtainLeaders()
