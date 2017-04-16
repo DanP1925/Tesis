@@ -28,11 +28,6 @@ class Corpus:
 			if entity.name == value:
 				return entity
 		return None
-	
-	def debug(self):
-		for entity in self.entities:
-			entity.debug()
-			print()
 			
 	def assignSemanticSimilarity(self, lsa):
 		for entity in self.entities:
@@ -45,3 +40,44 @@ class Corpus:
 							vector = lsa.getVector(term)
 							if len(vector) !=0:
 								sentiment.vectorRepresentation.append((term,vector))
+								
+	def assignPolaritySimilarity(self, sentiStrength):
+		for entity in self.entities:
+			for review in entity.reviews:
+				for sentiment in review.sentiments:
+					polarity = sentiStrength.getDefaultPolarity(sentiment.polarity)
+					
+					wordList = word_tokenize(sentiment.text)
+					maxGood = 0
+					maxBad = 0
+					hasBoostingWord = False
+					boostingValue = 0
+					for word in wordList:
+						if sentiStrength.isSentimentWord(word):
+							value = sentiStrength.getSentimentValue(word)
+							if hasBoostingWord:
+								value = value + boostingValue
+								hasBoostingWord = False
+								boostingValue = 0
+							if value > 0:
+								if value > maxGood:
+									maxGood = value
+							elif value < 0:
+								if value < maxBad:
+									maxBad = value
+						elif sentiStrength.isNegatingWord(word):
+							break
+						elif sentiStrength.isBoostingWord(word):
+							hasBoostingWord = True
+							boostingValue = sentiStrength.getBoostingValue(word)
+					polarityStrength = [polarity[0],polarity[1]]
+					if maxGood !=0:
+						polarityStrength[0] = maxGood
+					if maxBad != 0:
+						polarityStrength[1] = maxBad
+					sentiment.polarityStrength = polarityStrength
+							
+	def debug(self):
+		for entity in self.entities:
+			entity.debug()
+			print()

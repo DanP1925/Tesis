@@ -1,6 +1,7 @@
 import xmlparser as XML
 import corpus as COR
 import lsa as LAT
+import sentiStrength as SENSTR
 
 def main():
 	#doc = "D:\Ciclo 6\Tesis 2\stompol-tweets-train-tagged.xml"
@@ -23,13 +24,13 @@ def main():
 	lsa.reconstructMatrix()
 	corpus.assignSemanticSimilarity(lsa)
 	
-	# for entity in corpus.entities:
-		# entity.obtainLeaders()
-		# entity.generateGraph(lsa)
-		# entity.initializeLeaders()
-		# previousLeaders = list(entity.leaders)
-		# distances = entity.getDistances()
-		# print()
+	sentiStrength = SENSTR.sentiStrength()
+	corpus.assignPolaritySimilarity(sentiStrength)
+	
+	for entity in corpus.entities:
+		entity.obtainLeaders()
+		entity.obtainCommunities()
+		entity.printCommunities()
 	
 if __name__ == "__main__":
 	main()

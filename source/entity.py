@@ -1,6 +1,8 @@
 import review as REV
-import heapq
 import opinionGraph as GRAPH
+import operator
+import community as COMM
+import math
 
 class Entity:
 
@@ -10,130 +12,129 @@ class Entity:
 		self.graph = GRAPH.opinionGraph()
 		self.matrix = []
 		self.leaders = []
+		self.communities = []
+		self.outliers = []
 
 	def addReview(self,tweet):
 		newReview = REV.review(tweet)
 		self.reviews.append(newReview)
-		
-	def minimumValue(self, targetList, k):
-		auxSet = set(targetList)
-		sortedSet = sorted(auxSet, reverse = True)
-		if k<len(sortedSet):
-			return sortedSet[k]
-		else:
-			return 0
 			
 	def obtainLeaders(self):
-		self.graph.setNodes(self.sentiments)
-		self.graph.setEdges(self.sentiments)
-		return 0
-	
-	def obtainHNodes(self):
-		h = 0
-		i=0
-		heap = []
-		for sentiment in self.sentiments:
-			if (h==0 and sentiment.degree!=0):
-				heapq.heappush(heap,(sentiment.degree,i))
-				h += 1
-			else:
-				if (sentiment.degree>h and heap[0][0] > h):
-					heapq.heappush(heap,(sentiment.degree,i))
-					h += 1
-				elif (sentiment.degree>h and heap[0][0] == h):
-					heapq.heappop(heap)
-					heapq.heappush(heap,(sentiment.degree,i))
-			i+=1
-		return heap
-	
-	def hasLeaderNeighbors(self, hnode):
-		for index in self.leaders:
-			if self.matrix[hnode[1]][index] >0:
-				return True
-		return False
-	
+		self.graph.setNeighborNumber(self.reviews)
+		self.graph.setNodes(self.reviews)
+		self.graph.setEdges()
+
+		self.initializeLeaders()
+
 	def initializeLeaders(self):
-		hnodes = self.obtainHNodes()
+		hnodes = self.graph.obtainHNodes()
 		hnodes.sort(reverse=True)
 		while len(hnodes) != 0:
 			hnode = hnodes.pop(0)
-			if not self.hasLeaderNeighbors(hnode):
+			if not self.graph.hasLeaderNeighbors(hnode[1], self.leaders):
 				self.leaders.append(hnode[1])
-			
-	def minDist(self, unvisited):
-		min = float("inf")
-		index = -1
-		for i in range(0,len(unvisited)):
-			if unvisited[i][1] < min:
-				min = unvisited[i][1]
-				index = i
-		return index
-
-	def isInUnvisited(self, index, unvisited):
-		for element in unvisited:
-			if element[0] == index:
-				return True
-		return False
-		
-	def getNeighbors(self, index, unvisited):
-		neighbors = []
-		for i in range(0,len(self.matrix[index])) :
-			if self.matrix[index][i] > 0 and self.isInUnvisited(index,unvisited):
-				neighbors.append(i)
-		return neighbors
-		
-	def getDistanceOfUnvisited(self, unvisited, neighbor):
-		for element in unvisited:
-			if element[0] == neighbor:
-				return element[1]
-				
-	def setDistanceOfUnvisited(self, alt, unvisited, neighbor):
-		for element in unvisited:
-			if element[0] == neighbor:
-				element[1] = alt
+	
+	def obtainCommunities(self):
+		self.initializeReviewScore()
+		prevLeaders = list(self.leaders)
+		while True:
+			del self.communities[:]
+			self.initializeCommunities()
+			self.graph.setDistances(self.leaders)
+			distances = self.graph.getDistances()
+			distances = self.sortDistances(distances)
+			for element in distances:
+				self.assignCommunity(element[0])
+			for i in range(0,len(self.communities)):
+				self.communities[i].updateScore(self.graph.nodes, self.reviews)
+				self.communities[i].updateLeader(self.graph.nodes)
+				self.leaders[i] = self.communities[i].leader
+			for review in self.reviews:
+				review.updateScore(self.graph.nodes)
+			if prevLeaders == self.leaders:
 				break
+			prevLeaders = list(self.leaders)
 		
-	def dijkstra(self, target, leader):
-		unvisited = []
+	def initializeCommunities(self):
+		for leader in self.leaders:
+			self.communities.append(COMM.Community(leader))
 		
-		for u in range(0,len(self.matrix)):
-			dist = float("inf")
-			node = [u,dist]
-			unvisited.append(node)
+	def initializeReviewScore(self):
+		for review in self.reviews:
+			review.score = 1/len(self.reviews)
+	
+	def sortDistances(self, distances):
+		n = len(distances)
+		sorted = list(distances)
+		while True:
+			swapped = False
+			for i in range(1,n):
+				if self.compareDistances(sorted[i-1][1],sorted[i][1]):
+					sorted[i-1],sorted[i] = sorted[i],sorted[i-1]
+					swapped = True
+			if swapped == False:
+				break
+		return sorted
+	
+	def compareDistances(self, e1, e2):
+		infNum1 = 0
+		for element in e1:
+			if element == float('Inf'):
+				infNum1 += 1
+		infNum2 = 0
+		for element in e2:
+			if element == float('Inf'):
+				infNum2 += 1
+		if infNum2 > infNum1:
+			return False
+		elif infNum2 < infNum1:
+			return True
+		else:
+			dist1 = 0
+			for element in e1:
+				if element != float('Inf'):
+					dist1 += pow(element,2)
+			dist1 = math.sqrt(dist1)
 			
-		unvisited[leader][1] = 0
-		
-		while len(unvisited) > 0:
-			index = self.minDist(unvisited)
-			v = unvisited[index]
-			neighbors = self.getNeighbors(v[0], unvisited)
-			for neighbor in neighbors:
-				if neighbor == target:
-					return self.getDistanceOfUnvisited(unvisited,neighbor)
-				alt = v[1] + 1
-				if alt < self.getDistanceOfUnvisited(unvisited,neighbor):
-					self.setDistanceOfUnvisited(alt, unvisited,neighbor)
-			unvisited.pop(index)
-		return float("inf")
+			dist2 = 0
+			for element in e2:
+				if element != float('Inf'):
+					dist2 += pow(element,2)
+			dist2 = math.sqrt(dist2)
 			
-	def getDistances(self):
-		distances = []
-		for i in range(0,len(self.matrix)):
-			distance = []
-			for leader in self.leaders:
-				distance.append(1)
-				distance.append(self.dijkstra(i,leader))
-			distances.append((distance,i))
-		return distances
-			
-	def printMatrix(self):
-		for i in range(0,len(self.sentiments)):
-			for j in range(0, len(self.sentiments)):
-				print(str(self.matrix[i][j]) + " ", end ='')
-			print()
+			if dist1 > dist2:
+				return True
+			else:
+				return False
+	
+	def assignCommunity(self, index):
+		if index not in self.leaders:
+			maxcommon = 0
+			maxCommunity = -1
+			for i in range(0,len(self.communities)):
+				num = self.graph.edgesWithCommunity(index,self.communities[i])
+				if num > maxcommon:
+					maxcommon = num
+					maxCommunity = i
+			if maxCommunity == -1:
+				self.outliers.append(index)
+			else:
+				self.communities[maxCommunity].elements.append(index)
 	
 	def debug(self):
 		print('Entity')
 		print(self.name)
 		for sentiment in self.sentiments:
 			sentiment.debug()
+			
+	def printCommunities(self):
+		for community in self.communities:
+			community.debug(self.graph.nodes)
+		self.printOutliers(self.graph.nodes)
+		print('----------------------------')
+		
+	def printOutliers(self, nodes):
+		print("Outliers:")
+		for element in self.outliers:
+			print(nodes[element].sentiment.text)
+			

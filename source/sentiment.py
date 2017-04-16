@@ -1,4 +1,5 @@
 import corpus as COR
+import math
 from nltk import word_tokenize
 from nltk.stem import SnowballStemmer
 from stop_words import get_stop_words
@@ -13,73 +14,46 @@ class Sentiment:
 		self.vectorRepresentation = []
 		self.polarityStrength = []
 		
-	def termSimilarity(self, target, lsa):
-		sum1 = float(0)
+	def termSimilarity(self, target):
+		if len(self.vectorRepresentation) == 0 or len(target.vectorRepresentation) == 0:
+			return 0
+		
 		n1 = 0
-		
-		corpus = COR.Corpus()
-		
-		sentence1 = word_tokenize(self.text)
-		sentence2 = word_tokenize(target.text)
-
-		for word1 in sentence1:
-			sum2 = float(0)
+		sum1 = 0
+		for vector in self.vectorRepresentation:
 			n2 = 0
-			if corpus.isValidWord(word1):
-				cleanWord1= corpus.cleanWord(word1)
-				if lsa.isInTDMatrix(cleanWord1):
-					for word2 in sentence2:
-						if corpus.isValidWord(word2):
-							cleanWord2 = corpus.cleanWord(word2)
-							if lsa.isInTDMatrix(cleanWord2):
-								sum2 += spearmanr(lsa.getvector(cleanWord1),lsa.getvector(cleanWord2))[0]
-								n2 += 1
-					if sum2 >0:
-						n1 += 1
-						sum1 += sum2/n2
+			sum2 = 0
+			for vector2 in target.vectorRepresentation:
+				sum2 += spearmanr(vector[1],vector2[1])[0]
+				n2 += 1
+			if n2 != 0:
+				sum1 += sum2/n2
+				n1 += 1
 		
 		if n1 == 0:
-			return -1
-			
+			return 0
 		return sum1/n1
 	
 	def polaritySimilarity(self, target):
-		if self.polarity == 'N':
-			if target.polarity == 'N':
-				return 1
-			elif target.polarity == 'P':
-				return -1
-			else:
-				return 0
-		elif self.polarity == 'P':
-			if target.polarity == 'N':
-				return -1
-			elif target.polarity == 'P':
-				return 1
-			else:
-				return 0
-		else:
-			if target.polarity == 'N':
-				return 0
-			elif target.polarity == 'P':
-				return 0
-			else:
-				return 1
+		x = self.polarityStrength[0] - target.polarityStrength[0]
+		y = self.polarityStrength[1] - target.polarityStrength[1]
+		return math.sqrt(pow(x,2) + pow(y,2))
+		
+	def similarity(self, target):
+		mints = -1
+		maxts = 1
+		minps = 0
+		maxps =  math.sqrt(pow(4,2) + pow(4,2))
+		ts = self.termSimilarity(target)
+		ps = maxps - self.polaritySimilarity(target)
+		newts = ((ts - mints)/(maxts - mints))
+		newps = ((ps - minps)/(maxps - minps))
+		return ((2/3)*newts + (1/3)*newps)
 		
 	def isEqual(self, newSentiment):
 		if self.text == newSentiment.text and self.polarity == newSentiment.polarity:
 			return  True
 		return False
-		
-	def similarity(self, target, lsa):
-		return ((2/3)*self.termSimilarity(target, lsa) + (1/3)*self.polaritySimilarity(target))
-		
-	def calculateDegree(self, list):
-		degree = 0
-		for element in list:
-			if element != 0:
-				degree +=1
-		self.degree = degree
 	
 	def debug(self):
 		print('Sentiment')
