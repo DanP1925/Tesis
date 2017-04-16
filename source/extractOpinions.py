@@ -5,7 +5,8 @@ import sentiStrength as SENSTR
 
 def main():
 	#doc = "D:\Ciclo 6\Tesis 2\stompol-tweets-train-tagged.xml"
-	doc = r"D:\Ciclo 6\Tesis 2\xmlSamplefile.xml"
+	#doc = r"D:\Ciclo 6\Tesis 2\xmlSamplefile.xml"
+	doc = r"D:\Ciclo 6\Tesis 2\xmlStandardfile.xml"
 	
 	xmlparser = XML.XmlParser(doc)
 	tweets = xmlparser.root

@@ -39,6 +39,7 @@ class Entity:
 		prevLeaders = list(self.leaders)
 		while True:
 			del self.communities[:]
+			del self.outliers[:]
 			self.initializeCommunities()
 			self.graph.setDistances(self.leaders)
 			distances = self.graph.getDistances()

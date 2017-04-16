@@ -33,7 +33,7 @@ class Community:
 	def updateLeader(self, nodes):
 		maxvalue = -1
 		for i in range(0,len(nodes)):
-			if nodes[i].score > maxvalue:
+			if nodes[i].score > maxvalue and i in self.elements:
 				maxvalue = nodes[i].score
 				self.leader = i
 		
