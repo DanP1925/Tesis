@@ -74,7 +74,7 @@ class opinionGraph:
 		for i in range(0,len(edges)):
 			if edges[i] > 0:
 				if i in community.elements:
-					num += 1
+					num += edges[i]
 		return num
 	
 	def printMatrix(self):
