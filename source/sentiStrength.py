@@ -2,9 +2,9 @@ from difflib import SequenceMatcher
 class sentiStrength:
 
 	def __init__(self):
-		wordListDoc = r"D:\Ciclo 6\Tesis 2\dictionary\sentiment_words_spanish.txt"
-		boosterDoc = r"D:\Ciclo 6\Tesis 2\dictionary\booster_words_spanish.txt"
-		negationDoc =  r"D:\Ciclo 6\Tesis 2\dictionary\negating_words_spanish.txt"
+		wordListDoc = "/home/daniel/data/Ciclo 6/Tesis 2/dictionary/sentiment_words_spanish.txt"
+		boosterDoc = "/home/daniel/data/Ciclo 6/Tesis 2/dictionary/booster_words_spanish.txt"
+		negationDoc =  "/home/daniel/data/Ciclo 6/Tesis 2/dictionary/negating_words_spanish.txt"
 		self.sentimentWordList = self.parseDictionary(wordListDoc)
 		self.wordBoosterList = self.parseDictionary(boosterDoc)
 		self.wordNegationList = self.parseNegationDictionary(negationDoc)

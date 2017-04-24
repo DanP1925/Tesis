@@ -4,9 +4,9 @@ import lsa as LAT
 import sentiStrength as SENSTR
 
 def main():
-	#doc = "D:\Ciclo 6\Tesis 2\stompol-tweets-train-tagged.xml"
-	doc = r"D:\Ciclo 6\Tesis 2\xmlSamplefile.xml"
-	#doc = r"D:\Ciclo 6\Tesis 2\xmlStandardfile.xml"
+	#doc = "/home/daniel/data/Ciclo 6/Tesis 2/stompol-tweets-train-tagged.xml"
+	doc = "/home/daniel/data/Ciclo 6/Tesis 2/xmlSampleFile.xml"
+	#doc = "/home/daniel/data/Ciclo 6/Tesis 2/xmlStandardFile.xml"
 	
 	xmlparser = XML.XmlParser(doc)
 	tweets = xmlparser.root
@@ -32,6 +32,7 @@ def main():
 		entity.obtainLeaders()
 		entity.obtainCommunities()
 		entity.graph.printMatrix()
+		
 		entity.printCommunities()
 	
 if __name__ == "__main__":

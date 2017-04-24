@@ -80,4 +80,3 @@ class opinionGraph:
 	def printMatrix(self):
 		for node in self.nodes:
 			print(node.sentiment.text)
-			print(node.edges)
