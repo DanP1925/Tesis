@@ -31,6 +31,7 @@ def main():
 	for entity in corpus.entities:
 		entity.obtainLeaders()
 		entity.obtainCommunities()
+		entity.graph.printMatrix()
 		entity.printCommunities()
 	
 if __name__ == "__main__":
