@@ -3,6 +3,7 @@ import opinionGraph as GRAPH
 import operator
 import community as COMM
 import math
+import structure as STRUCT
 
 class Entity:
 
@@ -14,6 +15,7 @@ class Entity:
 		self.leaders = []
 		self.communities = []
 		self.outliers = []
+		self.structure = STRUCT.Structure()
 
 	def addReview(self,tweet):
 		newReview = REV.review(tweet)
@@ -121,6 +123,9 @@ class Entity:
 				self.outliers.append(index)
 			else:
 				self.communities[maxCommunity].elements.append(index)
+	
+	def assignOrder(self):
+		self.structure.assignOrder(self.communities,self.graph)
 	
 	def debug(self):
 		print('Entity')
