@@ -4,6 +4,7 @@ import operator
 import community as COMM
 import math
 import structure as STRUCT
+import freelingLibrary as FL
 
 class Entity:
 
@@ -126,6 +127,12 @@ class Entity:
 	
 	def assignOrder(self):
 		self.structure.assignOrder(self.communities,self.graph)
+
+	def fullParsing(self):
+		freelingAux = FL.freelingLibrary()
+		for summaryItem in self.structure.summaryOrder:
+			summaryItem.parseRepresentatives(freelingAux, self.graph.nodes, self.reviews)
+		print('=================')
 	
 	def debug(self):
 		print('Entity')

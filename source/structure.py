@@ -11,7 +11,7 @@ class Structure:
 		self.getRepresentatives(communities, graph)
 		self.getFrequencies(graph.nodes)
 		self.orderList(graph.nodes)		
-		#self.getSupportiveSentences(graph.nodes)
+		self.getSupportiveSentences(graph.nodes)
 
 	def getAspects(self, nodes):
 		aspectList = []
@@ -24,7 +24,7 @@ class Structure:
 	def getRepresentatives(self, communities, graph):
 		for element in self.summaryOrder:
 			element.getLeaderRepresentative(communities, graph)	
-			if element.representative == -1:
+			if element.representative is None:
 				element.getRepresentative(graph.nodes)
 
 	def getFrequencies(self, nodes):
@@ -43,6 +43,8 @@ class Structure:
 				break
 					 
 	def importance(self, structureItem, nodes):
+		if structureItem.representative is None:
+			return 0
 		alpha = 0.7
 		relevance = nodes[structureItem.representative].score	
 		controversy = max((0.5 - math.fabs(0.5 - structureItem.relPositiveFreq)),(0.5 - math.fabs(0.5 - structureItem.relPositiveFreq))) * 2
@@ -50,9 +52,10 @@ class Structure:
 
 	def getSupportiveSentences(self, nodes):
 		for element in self.summaryOrder:
-			element.getOppositeOpinion(nodes)
-			if element.relPositiveFreq > 0.7 or element.relNegativeFreq > 0.7:
-				element.getSupportiveOpinion(nodes)					
+			if element.representative is not None:
+				element.getOppositeOpinion(nodes)
+				if element.relPositiveFreq > 0.7 or element.relNegativeFreq > 0.7:
+					element.getSupportiveOpinion(nodes)					
 
 	def printOrder(self, nodes):
 		for element in self.summaryOrder:
