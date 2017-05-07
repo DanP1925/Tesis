@@ -5,6 +5,7 @@ import community as COMM
 import math
 import structure as STRUCT
 import freelingLibrary as FL
+import summaryGenerator as SG
 
 class Entity:
 
@@ -132,8 +133,48 @@ class Entity:
 		freelingAux = FL.freelingLibrary()
 		for summaryItem in self.structure.summaryOrder:
 			summaryItem.parseRepresentatives(freelingAux, self.graph.nodes, self.reviews)
-		print('=================')
 	
+	def generateSummary(self):
+		summary = SG.summaryGenerator()
+		for i in range(0,len(self.structure.summaryOrder)):
+			bimodal = False
+			lastPolarity = None
+			structureItem = self.structure.summaryOrder[i]
+			if i == 0:
+				summary.firstSentence(self.name, structureItem.aspect)
+			if structureItem.representative is not None:
+				reprSentiment = self.graph.nodes[structureItem.representative].sentiment
+				if reprSentiment.polarity == 'P':
+					relFreq = structureItem.relPositiveFreq	
+					absFreq = structureItem.absPositiveFreq
+				elif reprSentiment.polarity == 'N':
+					relFreq = structureItem.relNegativeFreq
+					absFreq = structureItem.absNegativeFreq
+				if relFreq < 0.7:
+					bimodal = True
+				summary.aspectMain(structureItem.aspect, structureItem.representativeType, structureItem.representativeFull, reprSentiment.polarity, bimodal, relFreq, absFreq, reprSentiment.text)
+				lastPolarity = reprSentiment.polarity
+			if structureItem.opposite is not None:
+				oppSentiment = self.graph.nodes[structureItem.opposite].sentiment
+				if oppSentiment.polarity == 'P':
+					relFreq = structureItem.relPositiveFreq	
+					absFreq = structureItem.absPositiveFreq
+				elif oppSentiment.polarity == 'N':
+					relFreq = structureItem.relNegativeFreq
+					absFreq = structureItem.absNegativeFreq
+				summary.aspectOpposite(lastPolarity, structureItem.oppositeType, structureItem.oppositeFull, oppSentiment.polarity, bimodal, relFreq, absFreq, oppSentiment.text)
+				lastPolarity = oppSentiment.polarity
+			if structureItem.support is not None:
+				supSentiment = self.graph.nodes[structureItem.support].sentiment
+				if supSentiment.polarity == 'P':
+					relFreq = structureItem.relPositiveFreq	
+					absFreq = structureItem.absPositiveFreq
+				elif supSentiment.polarity == 'N':
+					relFreq = structureItem.relNegativeFreq
+					absFreq = structureItem.absNegativeFreq
+				summary.aspectSupport(lastPolarity, structureItem.supportType, structureItem.supportFull, supSentiment.polarity, relFreq, absFreq, supSentiment.text)
+		return summary.summary
+
 	def debug(self):
 		print('Entity')
 		print(self.name)

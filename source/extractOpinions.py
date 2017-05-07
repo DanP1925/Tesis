@@ -5,8 +5,8 @@ import sentiStrength as SENSTR
 
 def main():
 	#doc = "/home/daniel/data/Ciclo6/Tesis2/stompol-tweets-train-tagged.xml"
-	#doc = "/home/daniel/data/Ciclo6/Tesis2/xmlSampleFile.xml"
-	doc = "/home/daniel/data/Ciclo6/Tesis2/xmlSampleFile2.xml"
+	doc = "/home/daniel/data/Ciclo6/Tesis2/xmlSampleFile.xml"
+	#doc = "/home/daniel/data/Ciclo6/Tesis2/xmlSampleFile2.xml"
 	#doc = "/home/daniel/data/Ciclo6/Tesis2/xmlStandardFile.xml"
 	
 	xmlparser = XML.XmlParser(doc)
@@ -34,6 +34,7 @@ def main():
 		entity.obtainCommunities()
 		entity.assignOrder()
 		entity.fullParsing()
+		print(entity.generateSummary())
 		print()
 
 if __name__ == "__main__":

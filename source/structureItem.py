@@ -106,19 +106,19 @@ class structureItem:
 			if rawText[-1] != '.' and rawText[-1] != '?':
 				rawText += '.'
 			sentimentText = nodes[self.representative].sentiment.text
-			representativeType, representativeFull = freelingAux.fullParsing(rawText, sentimentText)
+			self.representativeType, self.representativeFull = freelingAux.fullParsing(rawText, sentimentText)
 		if self.opposite is not None:
 			rawText = self.getRawText(nodes[self.opposite].sentiment, reviews)
 			if rawText[-1] != '.' and rawText[-1] != '?':
 				rawText += '.'
 			sentimentText = nodes[self.opposite].sentiment.text
-			oppositeType, oppositeFull = freelingAux.fullParsing(rawText, sentimentText)
+			self.oppositeType, self.oppositeFull = freelingAux.fullParsing(rawText, sentimentText)
 		if self.support is not None:
 			rawText = self.getRawText(nodes[self.support].sentiment, reviews)
 			if rawText[-1] != '.' and rawText[-1] != '?':
 				rawText += '.'
 			sentimentText = nodes[self.support].sentiment.text
-			supportType, supportFull = freelingAux.fullParsing(rawText, sentimentText)
+			self.supportType, self.supportFull = freelingAux.fullParsing(rawText, sentimentText)
 
 	def getRawText(self, targetSentiment, reviews):
 		for review in reviews:
