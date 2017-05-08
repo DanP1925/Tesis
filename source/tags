@@ -1,0 +1,179 @@
+!_TAG_FILE_FORMAT	2	/extended format; --format=1 will not append ;" to lines/
+!_TAG_FILE_SORTED	1	/0=unsorted, 1=sorted, 2=foldcase/
+!_TAG_PROGRAM_AUTHOR	Darren Hiebert	/dhiebert@users.sourceforge.net/
+!_TAG_PROGRAM_NAME	Exuberant Ctags	//
+!_TAG_PROGRAM_URL	http://ctags.sourceforge.net	/official site/
+!_TAG_PROGRAM_VERSION	5.8	//
+COMM	D:\Ciclo 6\Tesis 2\Tesis\source\entity.py	4;"	kind:namespace	line:4	language:Python
+COR	D:\Ciclo 6\Tesis 2\Tesis\source\extractOpinions.py	2;"	kind:namespace	line:2	language:Python
+COR	D:\Ciclo 6\Tesis 2\Tesis\source\sentiment.py	1;"	kind:namespace	line:1	language:Python
+COR	D:\Ciclo 6\Tesis 2\Tesis\source\test\testcorpus.py	6;"	kind:namespace	line:6	language:Python
+Community	D:\Ciclo 6\Tesis 2\Tesis\source\community.py	2;"	kind:class	line:2	language:Python	inherits:
+Corpus	D:\Ciclo 6\Tesis 2\Tesis\source\corpus.py	4;"	kind:class	line:4	language:Python	inherits:
+ENT	D:\Ciclo 6\Tesis 2\Tesis\source\corpus.py	1;"	kind:namespace	line:1	language:Python
+ET	D:\Ciclo 6\Tesis 2\Tesis\source\xmlparser.py	1;"	kind:namespace	line:1	language:Python
+Entity	D:\Ciclo 6\Tesis 2\Tesis\source\entity.py	7;"	kind:class	line:7	language:Python	inherits:
+GRAPH	D:\Ciclo 6\Tesis 2\Tesis\source\entity.py	2;"	kind:namespace	line:2	language:Python
+LAT	D:\Ciclo 6\Tesis 2\Tesis\source\extractOpinions.py	3;"	kind:namespace	line:3	language:Python
+LSA	D:\Ciclo 6\Tesis 2\Tesis\source\lsa.py	6;"	kind:class	line:6	language:Python	inherits:
+NOD	D:\Ciclo 6\Tesis 2\Tesis\source\opinionGraph.py	1;"	kind:namespace	line:1	language:Python
+REV	D:\Ciclo 6\Tesis 2\Tesis\source\entity.py	1;"	kind:namespace	line:1	language:Python
+SEN	D:\Ciclo 6\Tesis 2\Tesis\source\review.py	1;"	kind:namespace	line:1	language:Python
+SENSTR	D:\Ciclo 6\Tesis 2\Tesis\source\extractOpinions.py	4;"	kind:namespace	line:4	language:Python
+Sentiment	D:\Ciclo 6\Tesis 2\Tesis\source\sentiment.py	8;"	kind:class	line:8	language:Python	inherits:
+SequenceMatcher	D:\Ciclo 6\Tesis 2\Tesis\source\sentiStrength.py	1;"	kind:namespace	line:1	language:Python
+SnowballStemmer	D:\Ciclo 6\Tesis 2\Tesis\source\sentiment.py	4;"	kind:namespace	line:4	language:Python
+SnowballStemmer	D:\Ciclo 6\Tesis 2\Tesis\source\tfIdf.py	2;"	kind:namespace	line:2	language:Python
+TI	D:\Ciclo 6\Tesis 2\Tesis\source\lsa.py	1;"	kind:namespace	line:1	language:Python
+XML	D:\Ciclo 6\Tesis 2\Tesis\source\extractOpinions.py	1;"	kind:namespace	line:1	language:Python
+XML	D:\Ciclo 6\Tesis 2\Tesis\source\test\testcorpus.py	5;"	kind:namespace	line:5	language:Python
+XML	D:\Ciclo 6\Tesis 2\Tesis\source\test\testextractOpinion.py	2;"	kind:namespace	line:2	language:Python
+XML	D:\Ciclo 6\Tesis 2\Tesis\source\test\testxmlparser.py	5;"	kind:namespace	line:5	language:Python
+XmlParser	D:\Ciclo 6\Tesis 2\Tesis\source\xmlparser.py	3;"	kind:class	line:3	language:Python	inherits:
+__init__	D:\Ciclo 6\Tesis 2\Tesis\source\community.py	4;"	kind:member	line:4	language:Python	class:Community	access:public
+__init__	D:\Ciclo 6\Tesis 2\Tesis\source\corpus.py	6;"	kind:member	line:6	language:Python	class:Corpus	access:public
+__init__	D:\Ciclo 6\Tesis 2\Tesis\source\entity.py	9;"	kind:member	line:9	language:Python	class:Entity	access:public
+__init__	D:\Ciclo 6\Tesis 2\Tesis\source\lsa.py	8;"	kind:member	line:8	language:Python	class:LSA	access:public
+__init__	D:\Ciclo 6\Tesis 2\Tesis\source\opinionGraph.py	7;"	kind:member	line:7	language:Python	class:opinionGraph	access:public
+__init__	D:\Ciclo 6\Tesis 2\Tesis\source\opinionNode.py	3;"	kind:member	line:3	language:Python	class:opinionNode	access:public
+__init__	D:\Ciclo 6\Tesis 2\Tesis\source\review.py	5;"	kind:member	line:5	language:Python	class:review	access:public
+__init__	D:\Ciclo 6\Tesis 2\Tesis\source\sentiStrength.py	4;"	kind:member	line:4	language:Python	class:sentiStrength	access:public
+__init__	D:\Ciclo 6\Tesis 2\Tesis\source\sentiment.py	10;"	kind:member	line:10	language:Python	class:Sentiment	access:public
+__init__	D:\Ciclo 6\Tesis 2\Tesis\source\tfIdf.py	8;"	kind:member	line:8	language:Python	class:tfIdf	access:public
+__init__	D:\Ciclo 6\Tesis 2\Tesis\source\xmlparser.py	5;"	kind:member	line:5	language:Python	class:XmlParser	access:public
+addNewEntities	D:\Ciclo 6\Tesis 2\Tesis\source\corpus.py	9;"	kind:member	line:9	language:Python	class:Corpus	access:public
+addNewEntitiesMethod	D:\Ciclo 6\Tesis 2\Tesis\source\test\testcorpus.py	8;"	kind:class	line:8	language:Python	inherits:unittest.TestCase
+addReview	D:\Ciclo 6\Tesis 2\Tesis\source\entity.py	18;"	kind:member	line:18	language:Python	class:Entity	access:public
+asEntityList	D:\Ciclo 6\Tesis 2\Tesis\source\corpus.py	20;"	kind:member	line:20	language:Python	class:Corpus	access:public
+assignCommunity	D:\Ciclo 6\Tesis 2\Tesis\source\entity.py	109;"	kind:member	line:109	language:Python	class:Entity	access:public
+assignPolaritySimilarity	D:\Ciclo 6\Tesis 2\Tesis\source\corpus.py	44;"	kind:member	line:44	language:Python	class:Corpus	access:public
+assignSemanticSimilarity	D:\Ciclo 6\Tesis 2\Tesis\source\corpus.py	32;"	kind:member	line:32	language:Python	class:Corpus	access:public
+calculateDegree	D:\Ciclo 6\Tesis 2\Tesis\source\opinionNode.py	35;"	kind:member	line:35	language:Python	class:opinionNode	access:public
+centrality	D:\Ciclo 6\Tesis 2\Tesis\source\community.py	24;"	kind:member	line:24	language:Python	class:Community	access:public
+cleanWord	D:\Ciclo 6\Tesis 2\Tesis\source\tfIdf.py	57;"	kind:member	line:57	language:Python	class:tfIdf	access:public
+comboSuite	D:\Ciclo 6\Tesis 2\Tesis\source\test\testextractOpinion.py	15;"	kind:variable	line:15	language:Python
+compareDistances	D:\Ciclo 6\Tesis 2\Tesis\source\entity.py	78;"	kind:member	line:78	language:Python	class:Entity	access:public
+corpus	D:\Ciclo 6\Tesis 2\Tesis\source\test\testextractOpinion.py	3;"	kind:namespace	line:3	language:Python
+debug	D:\Ciclo 6\Tesis 2\Tesis\source\community.py	40;"	kind:member	line:40	language:Python	class:Community	access:public
+debug	D:\Ciclo 6\Tesis 2\Tesis\source\corpus.py	80;"	kind:member	line:80	language:Python	class:Corpus	access:public
+debug	D:\Ciclo 6\Tesis 2\Tesis\source\entity.py	123;"	kind:member	line:123	language:Python	class:Entity	access:public
+debug	D:\Ciclo 6\Tesis 2\Tesis\source\review.py	31;"	kind:member	line:31	language:Python	class:review	access:public
+debug	D:\Ciclo 6\Tesis 2\Tesis\source\sentiment.py	58;"	kind:member	line:58	language:Python	class:Sentiment	access:public
+dijkstra	D:\Ciclo 6\Tesis 2\Tesis\source\opinionNode.py	46;"	kind:member	line:46	language:Python	class:opinionNode	access:public
+doc	D:\Ciclo 6\Tesis 2\Tesis\source\test\testcorpus.py	10;"	kind:variable	line:10	language:Python	class:addNewEntitiesMethod
+doc	D:\Ciclo 6\Tesis 2\Tesis\source\test\testxmlparser.py	25;"	kind:variable	line:25	language:Python	class:extractAspectMethod
+doc	D:\Ciclo 6\Tesis 2\Tesis\source\test\testxmlparser.py	9;"	kind:variable	line:9	language:Python	class:extractEntityMethod
+edgesWithCommunity	D:\Ciclo 6\Tesis 2\Tesis\source\opinionGraph.py	67;"	kind:member	line:67	language:Python	class:opinionGraph	access:public
+extractAspectMethod	D:\Ciclo 6\Tesis 2\Tesis\source\test\testxmlparser.py	23;"	kind:class	line:23	language:Python	inherits:unittest.TestCase
+extractAspects	D:\Ciclo 6\Tesis 2\Tesis\source\xmlparser.py	23;"	kind:member	line:23	language:Python	class:XmlParser	access:public
+extractEntity	D:\Ciclo 6\Tesis 2\Tesis\source\xmlparser.py	9;"	kind:member	line:9	language:Python	class:XmlParser	access:public
+extractEntityMethod	D:\Ciclo 6\Tesis 2\Tesis\source\test\testxmlparser.py	7;"	kind:class	line:7	language:Python	inherits:unittest.TestCase
+getBoostingValue	D:\Ciclo 6\Tesis 2\Tesis\source\sentiStrength.py	74;"	kind:member	line:74	language:Python	class:sentiStrength	access:public
+getDefaultPolarity	D:\Ciclo 6\Tesis 2\Tesis\source\sentiStrength.py	34;"	kind:member	line:34	language:Python	class:sentiStrength	access:public
+getDistanceOfUnvisited	D:\Ciclo 6\Tesis 2\Tesis\source\opinionNode.py	81;"	kind:member	line:81	language:Python	class:opinionNode	access:public
+getDistances	D:\Ciclo 6\Tesis 2\Tesis\source\opinionGraph.py	61;"	kind:member	line:61	language:Python	class:opinionGraph	access:public
+getEntity	D:\Ciclo 6\Tesis 2\Tesis\source\corpus.py	26;"	kind:member	line:26	language:Python	class:Corpus	access:public
+getMinFromUnvisited	D:\Ciclo 6\Tesis 2\Tesis\source\opinionNode.py	72;"	kind:member	line:72	language:Python	class:opinionNode	access:public
+getRawTweet	D:\Ciclo 6\Tesis 2\Tesis\source\tfIdf.py	37;"	kind:member	line:37	language:Python	class:tfIdf	access:public
+getReviewScore	D:\Ciclo 6\Tesis 2\Tesis\source\community.py	15;"	kind:member	line:15	language:Python	class:Community	access:public
+getSentimentValue	D:\Ciclo 6\Tesis 2\Tesis\source\sentiStrength.py	51;"	kind:member	line:51	language:Python	class:sentiStrength	access:public
+getTermDocumentMatrix	D:\Ciclo 6\Tesis 2\Tesis\source\tfIdf.py	12;"	kind:member	line:12	language:Python	class:tfIdf	access:public
+getVector	D:\Ciclo 6\Tesis 2\Tesis\source\lsa.py	51;"	kind:member	line:51	language:Python	class:LSA	access:public
+get_stop_words	D:\Ciclo 6\Tesis 2\Tesis\source\sentiment.py	5;"	kind:namespace	line:5	language:Python
+get_stop_words	D:\Ciclo 6\Tesis 2\Tesis\source\tfIdf.py	3;"	kind:namespace	line:3	language:Python
+hasLeaderNeighbors	D:\Ciclo 6\Tesis 2\Tesis\source\opinionGraph.py	49;"	kind:member	line:49	language:Python	class:opinionGraph	access:public
+hasNode	D:\Ciclo 6\Tesis 2\Tesis\source\opinionGraph.py	25;"	kind:member	line:25	language:Python	class:opinionGraph	access:public
+heapq	D:\Ciclo 6\Tesis 2\Tesis\source\opinionGraph.py	3;"	kind:namespace	line:3	language:Python
+initializeCommunities	D:\Ciclo 6\Tesis 2\Tesis\source\entity.py	57;"	kind:member	line:57	language:Python	class:Entity	access:public
+initializeLeaders	D:\Ciclo 6\Tesis 2\Tesis\source\entity.py	29;"	kind:member	line:29	language:Python	class:Entity	access:public
+initializeReviewScore	D:\Ciclo 6\Tesis 2\Tesis\source\entity.py	61;"	kind:member	line:61	language:Python	class:Entity	access:public
+isBoostingWord	D:\Ciclo 6\Tesis 2\Tesis\source\sentiStrength.py	65;"	kind:member	line:65	language:Python	class:sentiStrength	access:public
+isEqual	D:\Ciclo 6\Tesis 2\Tesis\source\sentiment.py	53;"	kind:member	line:53	language:Python	class:Sentiment	access:public
+isInEntities	D:\Ciclo 6\Tesis 2\Tesis\source\corpus.py	14;"	kind:member	line:14	language:Python	class:Corpus	access:public
+isInTDMatrix	D:\Ciclo 6\Tesis 2\Tesis\source\lsa.py	45;"	kind:member	line:45	language:Python	class:LSA	access:public
+isNegatingWord	D:\Ciclo 6\Tesis 2\Tesis\source\sentiStrength.py	60;"	kind:member	line:60	language:Python	class:sentiStrength	access:public
+isSentimentWord	D:\Ciclo 6\Tesis 2\Tesis\source\sentiStrength.py	42;"	kind:member	line:42	language:Python	class:sentiStrength	access:public
+isValidWord	D:\Ciclo 6\Tesis 2\Tesis\source\tfIdf.py	49;"	kind:member	line:49	language:Python	class:tfIdf	access:public
+l2norm	D:\Ciclo 6\Tesis 2\Tesis\source\lsa.py	30;"	kind:member	line:30	language:Python	class:LSA	access:public
+main	D:\Ciclo 6\Tesis 2\Tesis\source\extractOpinions.py	6;"	kind:function	line:6	language:Python	access:public
+math	D:\Ciclo 6\Tesis 2\Tesis\source\entity.py	5;"	kind:namespace	line:5	language:Python
+math	D:\Ciclo 6\Tesis 2\Tesis\source\lsa.py	4;"	kind:namespace	line:4	language:Python
+math	D:\Ciclo 6\Tesis 2\Tesis\source\opinionGraph.py	2;"	kind:namespace	line:2	language:Python
+math	D:\Ciclo 6\Tesis 2\Tesis\source\sentiment.py	2;"	kind:namespace	line:2	language:Python
+math	D:\Ciclo 6\Tesis 2\Tesis\source\tfIdf.py	4;"	kind:namespace	line:4	language:Python
+minimumValue	D:\Ciclo 6\Tesis 2\Tesis\source\opinionNode.py	27;"	kind:member	line:27	language:Python	class:opinionNode	access:public
+numpy	D:\Ciclo 6\Tesis 2\Tesis\source\lsa.py	3;"	kind:namespace	line:3	language:Python
+obtainCommunities	D:\Ciclo 6\Tesis 2\Tesis\source\entity.py	37;"	kind:member	line:37	language:Python	class:Entity	access:public
+obtainHNodes	D:\Ciclo 6\Tesis 2\Tesis\source\opinionGraph.py	31;"	kind:member	line:31	language:Python	class:opinionGraph	access:public
+obtainLeaders	D:\Ciclo 6\Tesis 2\Tesis\source\entity.py	22;"	kind:member	line:22	language:Python	class:Entity	access:public
+obtaintTfIdf	D:\Ciclo 6\Tesis 2\Tesis\source\tfIdf.py	68;"	kind:member	line:68	language:Python	class:tfIdf	access:public
+operator	D:\Ciclo 6\Tesis 2\Tesis\source\entity.py	3;"	kind:namespace	line:3	language:Python
+opinionGraph	D:\Ciclo 6\Tesis 2\Tesis\source\opinionGraph.py	5;"	kind:class	line:5	language:Python	inherits:
+opinionNode	D:\Ciclo 6\Tesis 2\Tesis\source\opinionNode.py	1;"	kind:class	line:1	language:Python	inherits:
+os	D:\Ciclo 6\Tesis 2\Tesis\source\test\testGraphConstruction.py	3;"	kind:namespace	line:3	language:Python
+os	D:\Ciclo 6\Tesis 2\Tesis\source\test\testcorpus.py	3;"	kind:namespace	line:3	language:Python
+os	D:\Ciclo 6\Tesis 2\Tesis\source\test\testxmlparser.py	3;"	kind:namespace	line:3	language:Python
+parseDictionary	D:\Ciclo 6\Tesis 2\Tesis\source\sentiStrength.py	12;"	kind:member	line:12	language:Python	class:sentiStrength	access:public
+parseNegationDictionary	D:\Ciclo 6\Tesis 2\Tesis\source\sentiStrength.py	24;"	kind:member	line:24	language:Python	class:sentiStrength	access:public
+polaritySimilarity	D:\Ciclo 6\Tesis 2\Tesis\source\sentiment.py	37;"	kind:member	line:37	language:Python	class:Sentiment	access:public
+printCommunities	D:\Ciclo 6\Tesis 2\Tesis\source\entity.py	129;"	kind:member	line:129	language:Python	class:Entity	access:public
+printMatrix	D:\Ciclo 6\Tesis 2\Tesis\source\opinionGraph.py	76;"	kind:member	line:76	language:Python	class:opinionGraph	access:public
+printOutliers	D:\Ciclo 6\Tesis 2\Tesis\source\entity.py	135;"	kind:member	line:135	language:Python	class:Entity	access:public
+printTIMatrix	D:\Ciclo 6\Tesis 2\Tesis\source\tfIdf.py	112;"	kind:member	line:112	language:Python	class:tfIdf	access:public
+printvalueMatrix	D:\Ciclo 6\Tesis 2\Tesis\source\lsa.py	57;"	kind:member	line:57	language:Python	class:LSA	access:public
+rawText	D:\Ciclo 6\Tesis 2\Tesis\source\review.py	10;"	kind:member	line:10	language:Python	class:review	access:public
+reconstructMatrix	D:\Ciclo 6\Tesis 2\Tesis\source\lsa.py	36;"	kind:member	line:36	language:Python	class:LSA	access:public
+reduceDimension	D:\Ciclo 6\Tesis 2\Tesis\source\lsa.py	22;"	kind:member	line:22	language:Python	class:LSA	access:public
+review	D:\Ciclo 6\Tesis 2\Tesis\source\review.py	3;"	kind:class	line:3	language:Python	inherits:
+scipy	D:\Ciclo 6\Tesis 2\Tesis\source\lsa.py	2;"	kind:namespace	line:2	language:Python
+sentiStrength	D:\Ciclo 6\Tesis 2\Tesis\source\sentiStrength.py	2;"	kind:class	line:2	language:Python	inherits:
+setDistanceOfUnvisited	D:\Ciclo 6\Tesis 2\Tesis\source\opinionNode.py	67;"	kind:member	line:67	language:Python	class:opinionNode	access:public
+setDistances	D:\Ciclo 6\Tesis 2\Tesis\source\opinionGraph.py	55;"	kind:member	line:55	language:Python	class:opinionGraph	access:public
+setDistances	D:\Ciclo 6\Tesis 2\Tesis\source\opinionNode.py	42;"	kind:member	line:42	language:Python	class:opinionNode	access:public
+setEdges	D:\Ciclo 6\Tesis 2\Tesis\source\opinionGraph.py	21;"	kind:member	line:21	language:Python	class:opinionGraph	access:public
+setEdges	D:\Ciclo 6\Tesis 2\Tesis\source\opinionNode.py	10;"	kind:member	line:10	language:Python	class:opinionNode	access:public
+setNeighborNumber	D:\Ciclo 6\Tesis 2\Tesis\source\opinionGraph.py	11;"	kind:member	line:11	language:Python	class:opinionGraph	access:public
+setNodes	D:\Ciclo 6\Tesis 2\Tesis\source\opinionGraph.py	14;"	kind:member	line:14	language:Python	class:opinionGraph	access:public
+setSentiments	D:\Ciclo 6\Tesis 2\Tesis\source\review.py	22;"	kind:member	line:22	language:Python	class:review	access:public
+setUp	D:\Ciclo 6\Tesis 2\Tesis\source\test\testGraphConstruction.py	8;"	kind:member	line:8	language:Python	class:testSetEdges	access:public
+setUp	D:\Ciclo 6\Tesis 2\Tesis\source\test\testcorpus.py	15;"	kind:member	line:15	language:Python	class:addNewEntitiesMethod	access:public
+similarity	D:\Ciclo 6\Tesis 2\Tesis\source\sentiment.py	42;"	kind:member	line:42	language:Python	class:Sentiment	access:public
+singularValueDecomposition	D:\Ciclo 6\Tesis 2\Tesis\source\lsa.py	16;"	kind:member	line:16	language:Python	class:LSA	access:public
+sortDistances	D:\Ciclo 6\Tesis 2\Tesis\source\entity.py	65;"	kind:member	line:65	language:Python	class:Entity	access:public
+spearmanr	D:\Ciclo 6\Tesis 2\Tesis\source\sentiment.py	6;"	kind:namespace	line:6	language:Python
+suiteCorpus	D:\Ciclo 6\Tesis 2\Tesis\source\test\testextractOpinion.py	8;"	kind:variable	line:8	language:Python
+suiteList	D:\Ciclo 6\Tesis 2\Tesis\source\test\testextractOpinion.py	10;"	kind:variable	line:10	language:Python
+suiteXmlExtractAspect	D:\Ciclo 6\Tesis 2\Tesis\source\test\testextractOpinion.py	7;"	kind:variable	line:7	language:Python
+suiteXmlExtractEntity	D:\Ciclo 6\Tesis 2\Tesis\source\test\testextractOpinion.py	6;"	kind:variable	line:6	language:Python
+sys	D:\Ciclo 6\Tesis 2\Tesis\source\test\testGraphConstruction.py	2;"	kind:namespace	line:2	language:Python
+sys	D:\Ciclo 6\Tesis 2\Tesis\source\test\testcorpus.py	2;"	kind:namespace	line:2	language:Python
+sys	D:\Ciclo 6\Tesis 2\Tesis\source\test\testxmlparser.py	2;"	kind:namespace	line:2	language:Python
+termDocumentOcurrences	D:\Ciclo 6\Tesis 2\Tesis\source\tfIdf.py	105;"	kind:member	line:105	language:Python	class:tfIdf	access:public
+termSimilarity	D:\Ciclo 6\Tesis 2\Tesis\source\sentiment.py	17;"	kind:member	line:17	language:Python	class:Sentiment	access:public
+testAddNewEntitiesMultiple	D:\Ciclo 6\Tesis 2\Tesis\source\test\testcorpus.py	24;"	kind:member	line:24	language:Python	class:addNewEntitiesMethod	access:public
+testAddNewEntitiesSingle	D:\Ciclo 6\Tesis 2\Tesis\source\test\testcorpus.py	18;"	kind:member	line:18	language:Python	class:addNewEntitiesMethod	access:public
+testAspectExtractionMultiple	D:\Ciclo 6\Tesis 2\Tesis\source\test\testxmlparser.py	33;"	kind:member	line:33	language:Python	class:extractAspectMethod	access:public
+testAspectExtractionMultipleOnOneEntity	D:\Ciclo 6\Tesis 2\Tesis\source\test\testxmlparser.py	37;"	kind:member	line:37	language:Python	class:extractAspectMethod	access:public
+testAspectExtractionSingle	D:\Ciclo 6\Tesis 2\Tesis\source\test\testxmlparser.py	30;"	kind:member	line:30	language:Python	class:extractAspectMethod	access:public
+testEntityExtractionMultiple	D:\Ciclo 6\Tesis 2\Tesis\source\test\testxmlparser.py	17;"	kind:member	line:17	language:Python	class:extractEntityMethod	access:public
+testEntityExtractionMultipleOnOneEntity	D:\Ciclo 6\Tesis 2\Tesis\source\test\testxmlparser.py	20;"	kind:member	line:20	language:Python	class:extractEntityMethod	access:public
+testEntityExtractionSingle	D:\Ciclo 6\Tesis 2\Tesis\source\test\testxmlparser.py	14;"	kind:member	line:14	language:Python	class:extractEntityMethod	access:public
+testSetEdges	D:\Ciclo 6\Tesis 2\Tesis\source\test\testGraphConstruction.py	6;"	kind:class	line:6	language:Python	inherits:unittest.TestCase
+tfIdf	D:\Ciclo 6\Tesis 2\Tesis\source\tfIdf.py	6;"	kind:class	line:6	language:Python	inherits:
+tweets	D:\Ciclo 6\Tesis 2\Tesis\source\test\testcorpus.py	13;"	kind:variable	line:13	language:Python	class:addNewEntitiesMethod
+tweets	D:\Ciclo 6\Tesis 2\Tesis\source\test\testxmlparser.py	12;"	kind:variable	line:12	language:Python	class:extractEntityMethod
+tweets	D:\Ciclo 6\Tesis 2\Tesis\source\test\testxmlparser.py	28;"	kind:variable	line:28	language:Python	class:extractAspectMethod
+unittest	D:\Ciclo 6\Tesis 2\Tesis\source\test\testGraphConstruction.py	1;"	kind:namespace	line:1	language:Python
+unittest	D:\Ciclo 6\Tesis 2\Tesis\source\test\testcorpus.py	1;"	kind:namespace	line:1	language:Python
+unittest	D:\Ciclo 6\Tesis 2\Tesis\source\test\testextractOpinion.py	1;"	kind:namespace	line:1	language:Python
+unittest	D:\Ciclo 6\Tesis 2\Tesis\source\test\testxmlparser.py	1;"	kind:namespace	line:1	language:Python
+updateLeader	D:\Ciclo 6\Tesis 2\Tesis\source\community.py	33;"	kind:member	line:33	language:Python	class:Community	access:public
+updateScore	D:\Ciclo 6\Tesis 2\Tesis\source\community.py	9;"	kind:member	line:9	language:Python	class:Community	access:public
+updateScore	D:\Ciclo 6\Tesis 2\Tesis\source\review.py	28;"	kind:member	line:28	language:Python	class:review	access:public
+wordTotal	D:\Ciclo 6\Tesis 2\Tesis\source\tfIdf.py	98;"	kind:member	line:98	language:Python	class:tfIdf	access:public
+word_tokenize	D:\Ciclo 6\Tesis 2\Tesis\source\corpus.py	2;"	kind:namespace	line:2	language:Python
+word_tokenize	D:\Ciclo 6\Tesis 2\Tesis\source\sentiment.py	3;"	kind:namespace	line:3	language:Python
+word_tokenize	D:\Ciclo 6\Tesis 2\Tesis\source\tfIdf.py	1;"	kind:namespace	line:1	language:Python
+xmlparser	D:\Ciclo 6\Tesis 2\Tesis\source\test\testcorpus.py	12;"	kind:variable	line:12	language:Python	class:addNewEntitiesMethod
+xmlparser	D:\Ciclo 6\Tesis 2\Tesis\source\test\testxmlparser.py	11;"	kind:variable	line:11	language:Python	class:extractEntityMethod
+xmlparser	D:\Ciclo 6\Tesis 2\Tesis\source\test\testxmlparser.py	27;"	kind:variable	line:27	language:Python	class:extractAspectMethod
