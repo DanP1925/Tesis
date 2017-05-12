@@ -46,8 +46,11 @@ class Structure:
 		if structureItem.representative is None:
 			return 0
 		alpha = 0.7
+		beta = 1.0 / 3
+		gamma = 1.0 / 3
+		delta = 1.0 / 3
 		relevance = nodes[structureItem.representative].score	
-		controversy = max((0.5 - math.fabs(0.5 - structureItem.relPositiveFreq)),(0.5 - math.fabs(0.5 - structureItem.relPositiveFreq))) * 2
+		controversy = (beta * structureItem.relPositiveFreq) + (gamma * structureItem.relNegativeFreq) +  (delta * (min(structureItem.relPositiveFreq , structureItem.relNegativeFreq)/max(structureItem.relPositiveFreq , structureItem.relNegativeFreq)))
 		return (relevance * alpha) + (controversy * (1 - alpha))
 
 	def getSupportiveSentences(self, nodes):

@@ -2,6 +2,7 @@ import xmlparser as XML
 import corpus as COR
 import lsa as LAT
 import sentiStrength as SENSTR
+import time
 
 def main():
 	#doc = "/home/daniel/data/Ciclo6/Tesis2/stompol-tweets-train-tagged.xml"
