@@ -35,7 +35,12 @@ def main():
 		entity.obtainCommunities()
 		entity.assignOrder()
 		entity.fullParsing()
-		print(entity.generateSummary())
+		#print(entity.generateSummary())
+		#print()
+		sentences = entity.generateSummary()
+		for sentence in sentences.split('.'):
+			if sentence != ' ' and sentence != '':
+				print(sentence + '.')
 		print()
 
 if __name__ == "__main__":
