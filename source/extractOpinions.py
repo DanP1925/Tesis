@@ -20,27 +20,10 @@ def main():
 		for tweetEntity in tweetEntities:
 			entity = corpus.getEntity(tweetEntity)
 			entity.addReview(tweet)
-			
-	lsa  = LAT.LSA(tweets)
-	lsa.singularValueDecomposition()
-	lsa.reduceDimension()
-	lsa.reconstructMatrix()
-	corpus.assignSemanticSimilarity(lsa)
-	
-	sentiStrength = SENSTR.sentiStrength()
-	corpus.assignPolaritySimilarity(sentiStrength)
 	
 	for entity in corpus.entities:
-		entity.obtainLeaders()
-		entity.obtainCommunities()
-		entity.assignOrder()
-		entity.fullParsing()
-		#print(entity.generateSummary())
-		#print()
-		sentences = entity.generateSummary()
-		for sentence in sentences.split('.'):
-			if sentence != ' ' and sentence != '':
-				print(sentence + '.')
+		for review in entity.reviews:
+			print(review.text)
 		print()
 
 if __name__ == "__main__":
