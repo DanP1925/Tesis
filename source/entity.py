@@ -135,7 +135,9 @@ class Entity:
 			summaryItem.parseRepresentatives(freelingAux, self.graph.nodes, self.reviews)
 	
 	def generateSummary(self):
-		summary = SG.summaryGenerator()
+		max = 120
+		summary = SG.summaryGenerator(len(self.structure.summaryOrder))
+		
 		for i in range(0,len(self.structure.summaryOrder)):
 			bimodal = False
 			lastPolarity = None
@@ -152,7 +154,7 @@ class Entity:
 					absFreq = structureItem.absNegativeFreq
 				if relFreq < 0.7:
 					bimodal = True
-				summary.aspectMain(structureItem.aspect, structureItem.representativeType, structureItem.representativeFull, reprSentiment.polarity, bimodal, relFreq, absFreq, reprSentiment.text)
+				summary.aspectMain(structureItem.aspect, structureItem.representativeType, structureItem.representativeFull, reprSentiment.polarity, bimodal, relFreq, absFreq, reprSentiment.text, i)
 				lastPolarity = reprSentiment.polarity
 			if structureItem.opposite is not None:
 				oppSentiment = self.graph.nodes[structureItem.opposite].sentiment
@@ -162,7 +164,7 @@ class Entity:
 				elif oppSentiment.polarity == 'N':
 					relFreq = structureItem.relNegativeFreq
 					absFreq = structureItem.absNegativeFreq
-				summary.aspectOpposite(lastPolarity, structureItem.oppositeType, structureItem.oppositeFull, oppSentiment.polarity, bimodal, relFreq, absFreq, oppSentiment.text)
+				summary.aspectOpposite(lastPolarity, structureItem.oppositeType, structureItem.oppositeFull, oppSentiment.polarity, bimodal, relFreq, absFreq, oppSentiment.text, i)
 				lastPolarity = oppSentiment.polarity
 			if structureItem.support is not None:
 				supSentiment = self.graph.nodes[structureItem.support].sentiment
@@ -172,8 +174,64 @@ class Entity:
 				elif supSentiment.polarity == 'N':
 					relFreq = structureItem.relNegativeFreq
 					absFreq = structureItem.absNegativeFreq
-				summary.aspectSupport(lastPolarity, structureItem.supportType, structureItem.supportFull, supSentiment.polarity, relFreq, absFreq, supSentiment.text)
+				summary.aspectSupport(lastPolarity, structureItem.supportType, structureItem.supportFull, supSentiment.polarity, relFreq, absFreq, supSentiment.text, i)
+
 		return summary.summary
+
+	def reestructure(self, summaryList, maxWords):
+		result = ''
+		flag = False
+		flagSummaryList = [None] * len(summaryList)
+		for i in range(0,len(flagSummaryList)):
+			flagSummaryList[i] = ["","",""]
+
+		if len(summaryList[0]) + len(result) < maxWords:
+			result += summaryList[0]
+			flagSummaryList[0][0] = summaryList[0]
+		else:
+			flag = True
+
+		for i in range(1,len(summaryList)):
+			if flag:
+				break
+
+			element = summaryList[i][0]
+			if element is not None:
+				if len(element)+len(result) < maxWords:
+					result += element
+					flagSummaryList[i][0] = element
+				else:
+					flag = True
+
+		for i in range(1,len(summaryList)):
+			if flag:
+				break
+
+			element = summaryList[i][1]
+			if element is not None:
+				if len(element)+len(result) <maxWords:
+					result += element
+					flagSummaryList[i][1] = element
+				else:
+					flag = True
+
+		for i in range(1,len(summaryList)):
+			if flag:
+				break
+
+			element = summaryList[i][2]
+			if element is not None:
+				if len(element)+len(result) <maxWords:
+					result += element
+					flagSummaryList[i][2] = element
+				else:
+					flag = True
+		newResult = ''
+		for i in range(0,len(summaryList)):
+			for j in range(0,3):
+				newResult += flagSummaryList[i][j]
+
+		return newResult
 
 	def debug(self):
 		print('Entity')
