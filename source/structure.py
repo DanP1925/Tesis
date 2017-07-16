@@ -3,8 +3,12 @@ import math
 
 class Structure:
     
-    def __init__(self):
+    def __init__(self, positiveFactor, negativeFactor, controversyFactor):
         self.summaryOrder = []
+        self.relevanceFactor = 0.7
+        self.positiveFactor = positiveFactor
+        self.negativeFactor = negativeFactor
+        self.controversyFactor = controversyFactor
 		
     def assignOrder(self, communities, graph):
         self.getAspects(graph.nodes)
@@ -46,18 +50,13 @@ class Structure:
         if structureItem.representative is None:
             return 0
 
-        relevanceFactor = 0.7
-        positiveFactor = 1.0 / 3
-        negativeFactor = 1.0 / 3
-        controversyFactor = 1.0 / 3
-
         relevance = nodes[structureItem.representative].score	
-        positiveValue = positiveFactor * structureItem.relPositiveFreq
-        negativeValue = negativeFactor * structureItem.relNegativeFreq
-        controverseValue = controversyFactor * min(structureItem.relPositiveFreq , structureItem.relNegativeFreq)/max(structureItem.relPositiveFreq , structureItem.relNegativeFreq)
+        positiveValue = self.positiveFactor * structureItem.relPositiveFreq
+        negativeValue = self.negativeFactor * structureItem.relNegativeFreq
+        controverseValue = self.controversyFactor * min(structureItem.relPositiveFreq , structureItem.relNegativeFreq)/max(structureItem.relPositiveFreq , structureItem.relNegativeFreq)
 
         controversy = positiveValue + negativeValue  + controverseValue 
-        return (relevance * relevanceFactor) + (controversy * (1 - relevanceFactor))
+        return (relevance * self.relevanceFactor) + (controversy * (1 - self.relevanceFactor))
 
     def getSupportiveSentences(self, nodes):
         for element in self.summaryOrder:

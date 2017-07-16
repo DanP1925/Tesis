@@ -9,7 +9,7 @@ import summaryGenerator as SG
 
 class Entity:
 
-	def __init__(self, name):
+	def __init__(self, name, positiveFactor, negativeFactor, controversyFactor):
 		self.name = name
 		self.reviews = []
 		self.graph = GRAPH.opinionGraph()
@@ -17,7 +17,7 @@ class Entity:
 		self.leaders = []
 		self.communities = []
 		self.outliers = []
-		self.structure = STRUCT.Structure()
+		self.structure = STRUCT.Structure(positiveFactor, negativeFactor, controversyFactor)
 
 	def addReview(self,tweet):
 		newReview = REV.review(tweet)
