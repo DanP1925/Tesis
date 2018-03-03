@@ -61,6 +61,7 @@ def main():
         entity.obtainCommunities()
         entity.assignOrder()
         entity.fullParsing()
+
         print(entity.reestructure(entity.generateSummary(), 1200))
         print()
 
