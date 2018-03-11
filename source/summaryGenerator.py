@@ -12,7 +12,7 @@ class summaryGenerator:
 		name = self.removeUnderLine(entityName)
 		self.summary[0] = 'De la entidad ' + name + ' se tiene como caracteristica principal al ' + self.removeUnderLine(aspectName) + '. '
 
-	def aspectMain(self, aspectName, mainType, mainFull, polarity,  bimodal, relFreq, absFreq, alternateText, i):
+	def aspectMain(self, aspectName, mainType, mainTag, mainFull, polarity,  bimodal, relFreq, absFreq, alternateText, i):
 		random.seed()
 
 		sentence = ''
@@ -107,7 +107,7 @@ class summaryGenerator:
 		self.summary[i+1] = [sentence,None,None]
 
 
-	def aspectOpposite(self, lastPolarity, mainType, mainFull, polarity,  bimodal, relFreq, absFreq, alternateText, i):
+	def aspectOpposite(self, lastPolarity, mainType, mainTag, mainFull, polarity,  bimodal, relFreq, absFreq, alternateText, i):
 		random.seed()
 
 		sentence = ''
@@ -185,7 +185,7 @@ class summaryGenerator:
 
 		self.summary[i+1][1]=sentence
 
-	def aspectSupport(self, lastPolarity, mainType, mainFull, polarity, relFreq, absFreq, alternateText, i):
+	def aspectSupport(self, lastPolarity, mainType, mainTag, mainFull, polarity, relFreq, absFreq, alternateText, i):
 		random.seed()
 
 		sentence = ''

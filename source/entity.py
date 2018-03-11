@@ -131,8 +131,8 @@ class Entity:
 
     def fullParsing(self):
         freelingAux = FL.freelingLibrary()
-        for summaryItem in self.structure.summaryOrder:
-            summaryItem.parseRepresentatives(freelingAux, self.graph.nodes, self.reviews)
+        for structureItem in self.structure.summaryOrder:
+            structureItem.parseRepresentatives(freelingAux, self.graph.nodes, self.reviews)
 	
     def generateSummary(self):
         max = 120
@@ -154,7 +154,7 @@ class Entity:
                     absFreq = structureItem.absNegativeFreq
                 if relFreq < 0.7:
                     bimodal = True
-                summary.aspectMain(structureItem.aspect, structureItem.representativeType, structureItem.representativeFull, reprSentiment.polarity, bimodal, relFreq, absFreq, reprSentiment.text, i)
+                summary.aspectMain(structureItem.aspect, structureItem.representativeType, structureItem.representativeTag, structureItem.representativeFull, reprSentiment.polarity, bimodal, relFreq, absFreq, reprSentiment.text, i)
                 lastPolarity = reprSentiment.polarity
             if structureItem.opposite is not None:
                 oppSentiment = self.graph.nodes[structureItem.opposite].sentiment
@@ -164,7 +164,7 @@ class Entity:
                 elif oppSentiment.polarity == 'N':
                     relFreq = structureItem.relNegativeFreq
                     absFreq = structureItem.absNegativeFreq
-                summary.aspectOpposite(lastPolarity, structureItem.oppositeType, structureItem.oppositeFull, oppSentiment.polarity, bimodal, relFreq, absFreq, oppSentiment.text, i)
+                summary.aspectOpposite(lastPolarity, structureItem.oppositeType, structureItem.oppositeTag, structureItem.oppositeFull, oppSentiment.polarity, bimodal, relFreq, absFreq, oppSentiment.text, i)
                 lastPolarity = oppSentiment.polarity
             if structureItem.support is not None:
                 supSentiment = self.graph.nodes[structureItem.support].sentiment
@@ -174,7 +174,7 @@ class Entity:
                 elif supSentiment.polarity == 'N':
                     relFreq = structureItem.relNegativeFreq
                     absFreq = structureItem.absNegativeFreq
-                summary.aspectSupport(lastPolarity, structureItem.supportType, structureItem.supportFull, supSentiment.polarity, relFreq, absFreq, supSentiment.text, i)
+                summary.aspectSupport(lastPolarity, structureItem.supportType, structureItem.supportTag, structureItem.supportFull, supSentiment.polarity, relFreq, absFreq, supSentiment.text, i)
 
         return summary.summary
 

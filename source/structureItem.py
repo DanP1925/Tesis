@@ -5,12 +5,15 @@ class structureItem:
         self.representative = None 
         self.representativeType = None
         self.representativeFull = None
+        self.representativeTag = None
         self.opposite = None
         self.oppositeType = None
         self.oppositeFull = None
+        self.oppositeTag = None
         self.support = None
         self.supportType = None
         self.supportFull = None
+        self.supportTag = None
         self.relPositiveFreq = 0
         self.relNegativeFreq = 0
         self.absPositiveFreq = 0
@@ -106,21 +109,24 @@ class structureItem:
             if rawText[-1] != '.' and rawText[-1] != '?':
                 rawText += '.'
             sentimentText = nodes[self.representative].sentiment.text
-            self.representativeType, self.representativeFull = freelingAux.fullParsing(rawText, sentimentText)
+            self.representativeType, self.representativeFull, self.representativeTag = freelingAux.fullParsing(rawText, sentimentText)
+            print(self.representativeFull)
+            print(self.representativeType)
+            print(self.representativeTag)
 
         if self.opposite is not None:
             rawText = self.getRawText(nodes[self.opposite].sentiment, reviews)
             if rawText[-1] != '.' and rawText[-1] != '?':
                 rawText += '.'
             sentimentText = nodes[self.opposite].sentiment.text
-            self.oppositeType, self.oppositeFull = freelingAux.fullParsing(rawText, sentimentText)
+            self.oppositeType, self.oppositeFull, self.oppositeTag = freelingAux.fullParsing(rawText, sentimentText)
 
         if self.support is not None:
             rawText = self.getRawText(nodes[self.support].sentiment, reviews)
             if rawText[-1] != '.' and rawText[-1] != '?':
                 rawText += '.'
             sentimentText = nodes[self.support].sentiment.text
-            self.supportType, self.supportFull = freelingAux.fullParsing(rawText, sentimentText)
+            self.supportType, self.supportFull, self.supportTag = freelingAux.fullParsing(rawText, sentimentText)
 
     def getRawText(self, targetSentiment, reviews):
         for review in reviews:
