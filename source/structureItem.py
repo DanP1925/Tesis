@@ -110,9 +110,6 @@ class structureItem:
                 rawText += '.'
             sentimentText = nodes[self.representative].sentiment.text
             self.representativeType, self.representativeFull, self.representativeTag = freelingAux.fullParsing(rawText, sentimentText)
-            print(self.representativeFull)
-            print(self.representativeType)
-            print(self.representativeTag)
 
         if self.opposite is not None:
             rawText = self.getRawText(nodes[self.opposite].sentiment, reviews)

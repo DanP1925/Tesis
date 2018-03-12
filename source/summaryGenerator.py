@@ -52,15 +52,24 @@ class summaryGenerator:
 			if polarity == 'P':
 				num = random.randint(0,1)
 				if num == 0:
-					sentence += 'algunos estaban a favor debido a ' + self.restore(mainFull, alternateText) + '. '
+					sentence += 'algunos estaban a favor debido a '
 				elif num == 1:
-					sentence += 'algunos pensaban que era bueno debido a ' + self.restore(mainFull, alternateText) + '. '
+					sentence += 'algunos pensaban que era bueno debido a ' 
+
+				sentence += self.addArticles(mainType, mainTag) + ' '
+				sentence += self.restore(mainFull, alternateText) + '. '
+
+
 			elif polarity == 'N':
 				num = random.randint(0,1)
 				if num == 0:
-					sentence += 'algunos estaban en contra debido a ' + self.restore(mainFull, alternateText) + '. '
+					sentence += 'algunos estaban en contra debido a '
 				elif num == 1:
-					sentence += 'algunos pensaban que era malo debido a ' + self.restore(mainFull, alternateText) + '. '
+					sentence += 'algunos pensaban que era malo debido a '
+					
+				sentence += self.addArticles(mainType, mainTag) + ' '
+				sentence += self.restore(mainFull, alternateText) + '. '
+
 		else:
 			if relFreq == 1:
 				num = random.randint(0,1)
@@ -98,10 +107,16 @@ class summaryGenerator:
 
 			if mainType is not None:
 				if mainType == 'sn' or mainType == 'grup-sp-inf' or mainType == 'grup-sp':
-					sentence += 'hecho de ' + self.restore(mainFull, alternateText) + '. '
+					sentence += 'hecho de '
+					sentence += self.addArticles(mainType, mainTag) + ' '
+					sentence += self.restore(mainFull, alternateText) + '. '
+
 				
 				if mainType == 'grup-verb' or mainType == 'grup-verb-inf': 
-					sentence += 'acto de ' + self.restore(mainFull, alternateText) + '. '
+					sentence += 'acto de '
+					sentence += self.addArticles(mainType, mainTag) + ' '
+					sentence += self.restore(mainFull, alternateText) + '. '
+
 			else:
 				sentence += alternateText + '.'
 		self.summary[i+1] = [sentence,None,None]
@@ -121,15 +136,27 @@ class summaryGenerator:
 			if polarity == 'P':
 				num = random.randint(0,1)
 				if num == 0:
-					sentence += 'algunos estaban a favor debido a ' + self.restore(mainFull, alternateText) + '. '
+					sentence += 'algunos estaban a favor debido a '
+					sentence += self.addArticles(mainType, mainTag) + ' '
+					sentence += self.restore(mainFull, alternateText) + '. '
+
 				elif num == 1:
-					sentence += 'algunos pensaban que era bueno debido a ' + self.restore(mainFull, alternateText) + '. '
+					sentence += 'algunos pensaban que era bueno debido a '
+					sentence += self.addArticles(mainType, mainTag) + ' '
+					sentence += self.restore(mainFull, alternateText) + '. '
+
 			elif polarity == 'N':
 				num = random.randint(0,1)
 				if num == 0:
-					sentence += 'algunos estaban en contra debido a ' + self.restore(mainFull, alternateText) + '. '
+					sentence += 'algunos estaban en contra debido a '
+					sentence += self.addArticles(mainType, mainTag) + ' '
+					sentence += self.restore(mainFull, alternateText) + '. '
+
 				elif num == 1:
-					sentence += 'algunos estaban en contra debido a ' + self.restore(mainFull, alternateText) + '. '
+					sentence += 'algunos estaban en contra debido a ' 
+					sentence += self.addArticles(mainType, mainTag) + ' '
+					sentence += self.restore(mainFull, alternateText) + '. '
+
 		else:
 			num = random.randint(0,1)
 			if num == 0:
@@ -176,10 +203,16 @@ class summaryGenerator:
 
 			if mainType is not None:
 				if mainType == 'sn' or mainType == 'grup-sp-inf' or mainType == 'grup-sp':
-					sentence += 'hecho de ' + self.restore(mainFull, alternateText) + '. '
+					sentence += 'hecho de '
+					sentence += self.addArticles(mainType, mainTag) + ' '
+					sentence += self.restore(mainFull, alternateText) + '. '
+
 				
 				if mainType == 'grup-verb' or mainType == 'grup-verb-inf': 
-					sentence += 'acto de ' + self.restore(mainFull, alternateText) + '. '
+					sentence += 'acto de '
+					sentence += self.addArticles(mainType, mainTag) + ' '
+					sentence += self.restore(mainFull, alternateText) + '. '
+
 			else:
 				sentence += alternateText + '. '
 
@@ -217,10 +250,17 @@ class summaryGenerator:
 
 		if mainType is not None:
 			if mainType == 'sn' or mainType == 'grup-sp-inf' or mainType == 'grup-sp':
-				sentence += 'hecho de ' + self.restore(mainFull, alternateText) + '. '
+				sentence += 'hecho de '
+				sentence += self.addArticles(mainType, mainTag) + ' '
+				sentence += self.restore(mainFull, alternateText) + '. '
+
+
 			
 			if mainType == 'grup-verb' or mainType == 'grup-verb-inf': 
-				sentence += 'acto de ' + self.restore(mainFull, alternateText) + '. '
+				sentence += 'acto de '
+				sentence += self.addArticles(mainType, mainTag) + ' '
+				sentence += self.restore(mainFull, alternateText) + '. '
+
 		else:
 			sentence += alternateText + '. '
 
@@ -247,4 +287,35 @@ class summaryGenerator:
 				result += element
 			else:
 				result += element + ' '
+		return result
+
+	def addArticles(self, mainType, mainTag):
+
+		result = ''
+		if mainType == 'sn' or mainType == 'grup-sp-inf' or mainType == 'grup-sp':
+			tag = mainTag[0]
+			if (len(tag) > 3):
+				if tag[2] == 'M':
+					if tag[3] == 'S':
+						result += ' el '
+					elif tag[3] == 'P':
+						result += ' los '
+				if tag[2] == 'F':
+					if tag[3] == 'S':
+						result += ' la '
+					elif tag[3] == 'P':
+						result += ' las '
+		if mainType == 'grup-verb' or mainType == 'grup-verb-inf': 
+			tag = mainTag[0]
+			if (len(tag) > 6):
+				if tag[6] == 'M':
+					if tag[5] == 'S':
+						result += ' el '
+					elif tag[5] == 'P':
+						result += ' los '
+				if tag[6] == 'F':
+					if tag[5] == 'S':
+						result += ' la '
+					elif tag[5] == 'P':
+						result += ' las '
 		return result
